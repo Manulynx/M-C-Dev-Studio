@@ -4,67 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - M&C Dev Studio</title>
-    <!-- Base path para asegurar rutas relativas correctas -->
-    <base href="/">
-    <!-- Meta tags para evitar caché -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <!-- Archivos CSS -->
-    <link rel="stylesheet" href="css/normalize.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/responsive.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="assets/icons/M&C Dev.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Solución fallback para los estilos -->
-    <style>
-        /* Estilos básicos de fallback para asegurar legibilidad si los CSS externos fallan */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .logo img {
-            max-height: 60px;
-        }
-        section {
-            padding: 40px 5%;
-        }
-        h1, h2, h3 {
-            margin-bottom: 20px;
-        }
-        .contact-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            padding: 40px 5% 20px;
-        }
-    </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo" onerror="this.src='https://via.placeholder.com/150x60?text=M%26C+Dev+Studio'">
+            <img src="assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo">
         </div>
         <nav class="main-nav">
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -164,7 +116,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo" onerror="this.src='https://via.placeholder.com/150x60?text=M%26C+Dev+Studio'">
+                <img src="assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo">
             </div>
             <div class="footer-links">
                 <h3>Quick Links</h3>
@@ -196,51 +148,7 @@
         </div>
     </footer>
     
-    <!-- Scripts con carga fallback -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
-    
-    <!-- Script para manejar posibles errores de carga de CSS -->
-    <script>
-        // Verificar si los estilos han cargado correctamente
-        document.addEventListener('DOMContentLoaded', function() {
-            // Verificar si el CSS se cargó correctamente comprobando una propiedad CSS conocida
-            const styleLoaded = window.getComputedStyle(document.body).getPropertyValue('--primary-color');
-            
-            if (!styleLoaded || styleLoaded === "") {
-                console.warn("Los estilos CSS no se han cargado correctamente. Intentando cargar de nuevo...");
-                
-                // Recargar los estilos con rutas absolutas
-                const stylesheets = [
-                    '/css/normalize.css',
-                    '/css/style.css',
-                    '/css/responsive.css'
-                ];
-                
-                stylesheets.forEach(stylesheet => {
-                    const link = document.createElement('link');
-                    link.rel = 'stylesheet';
-                    link.href = stylesheet;
-                    link.type = 'text/css';
-                    document.head.appendChild(link);
-                });
-            }
-        });
-        
-        // Asegurar que las imágenes tengan un fallback
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('img').forEach(img => {
-                img.addEventListener('error', function() {
-                    if (!this.src.includes('placeholder.com')) {
-                        this.src = 'https://via.placeholder.com/300x200?text=Image+Not+Found';
-                    }
-                });
-            });
-            
-            // Actualizar el año de copyright
-            const currentYear = new Date().getFullYear();
-            document.querySelector('.footer-bottom p').textContent = `© ${currentYear} M&C Dev Studio. All rights reserved.`;
-        });
-    </script>
 </body>
 </html>
