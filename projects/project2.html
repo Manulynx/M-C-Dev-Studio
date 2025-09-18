@@ -3,42 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 2 - M&C Dev Studio</title>
+    <title>Eglis S.A. Remittance System - M&C Dev Studio</title>
+    <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../assets/icons/M&C Dev.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>M&C Dev Studio</h1>
-        <nav>
-            <ul>
+        <div class="logo">
+            <img src="../assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo">
+        </div>
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About</a></li>
-                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
                 <li><a href="../team.html">Team</a></li>
                 <li><a href="../contact.html">Contact</a></li>
             </ul>
+            <div class="nav-cta">
+                <a href="../contact.html" class="cta-button nav-cta-button">Get a Quote</a>
+            </div>
         </nav>
     </header>
     <main>
-        <section>
-            <h2>Project 2 Title</h2>
-            <img src="../assets/images/project2-image.jpg" alt="Project 2 Image">
-            <p>Description of Project 2 goes here. This section should provide an overview of the project, its goals, and the technologies used.</p>
+        <section class="project-details">
+            <h2>Eglis S.A. - Remittance System</h2>
+            
+            <div class="project-tags">
+                <span class="tag">Django</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Fintech</span>
+                <span class="tag">UX/UI</span>
+            </div>
+            
+            <div class="project-gallery">
+                <div class="gallery-container">
+                    <img src="../img/Eglis/Inicio Eglis.png" alt="Página de inicio" class="gallery-img">
+                    <img src="../img/Eglis/Eglis FormRem.png" alt="Formulario de remesas" class="gallery-img">
+                    <img src="../img/Eglis/Eglis NavBar.png" alt="Barra de navegación" class="gallery-img">
+                    <img src="../img/Eglis/Eglis FormEnv.png" alt="Formulario de envío" class="gallery-img">
+                </div>
+                <div class="gallery-controls">
+                    <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="project-description">
+                <p>Eglis S.A. is a financial web application designed to automate critical remittance and payment processes. It provides a secure and efficient platform for managing financial transactions with a focus on user experience and security.</p>
+            </div>
+            
             <h3>Features</h3>
-            <ul>
-                <li>Feature 1</li>
-                <li>Feature 2</li>
-                <li>Feature 3</li>
+            <ul class="features-list">
+                <li><i class="fas fa-check"></i> Secure authentication and authorization system</li>
+                <li><i class="fas fa-check"></i> Financial transaction processing and validation</li>
+                <li><i class="fas fa-check"></i> Real-time notifications for users and administrators</li>
+                <li><i class="fas fa-check"></i> Administrative dashboard with management tools</li>
+                <li><i class="fas fa-check"></i> Responsive interface for mobile and desktop devices</li>
             </ul>
+            
             <h3>Technologies Used</h3>
-            <p>List of technologies used in Project 2.</p>
-            <h3>Links</h3>
-            <p><a href="https://github.com/your-repo/project2">GitHub Repository</a></p>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-django"></i>
+                    <span>Django</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Fintech Solutions</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <span>UX/UI Design</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Responsive Design</span>
+                </div>
+            </div>
+            
+            <div class="project-actions">
+                <a href="../contact.html" class="cta-button primary">Request More Information</a>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 M&C Dev Studio. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo">
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../team.html">Team</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@mcdevstudio.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 M&C Dev Studio. All rights reserved.</p>
+        </div>
     </footer>
     <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery functionality
+            const galleryContainer = document.querySelector('.gallery-container');
+            const prevButton = document.querySelector('.gallery-prev');
+            const nextButton = document.querySelector('.gallery-next');
+            const images = document.querySelectorAll('.gallery-img');
+            let currentIndex = 0;
+            
+            // Set initial state
+            updateGallery();
+            
+            // Event listeners
+            prevButton.addEventListener('click', showPreviousImage);
+            nextButton.addEventListener('click', showNextImage);
+            
+            function showPreviousImage() {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                updateGallery();
+            }
+            
+            function showNextImage() {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                updateGallery();
+            }
+            
+            function updateGallery() {
+                const offset = -currentIndex * 100;
+                galleryContainer.style.transform = `translateX(${offset}%)`;
+            }
+        });
+    </script>
 </body>
 </html>

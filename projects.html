@@ -4,44 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M&C Dev Studio - Projects</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/icons/M&C Dev.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>M&C Dev Studio Projects</h1>
-        <nav>
-            <ul>
+        <div class="logo">
+            <img src="assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo">
+        </div>
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="team.html">Team</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div class="nav-cta">
+                <a href="contact.html" class="cta-button nav-cta-button">Get a Quote</a>
+            </div>
         </nav>
     </header>
     
     <main>
-        <section>
-            <h2>Our Projects</h2>
-            <article>
-                <h3><a href="projects/project1.html">Project 1</a></h3>
-                <p>A brief description of Project 1 goes here.</p>
-            </article>
-            <article>
-                <h3><a href="projects/project2.html">Project 2</a></h3>
-                <p>A brief description of Project 2 goes here.</p>
-            </article>
-            <article>
-                <h3><a href="projects/project3.html">Project 3</a></h3>
-                <p>A brief description of Project 3 goes here.</p>
-            </article>
+        <section class="projects-section">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="img/LikeHome/Inventario Like-Home.png" alt="LikeHome E-commerce Platform">
+                    </div>
+                    <div class="project-info">
+                        <h3><a href="projects/project1.html">LikeHome E-commerce Platform</a></h3>
+                        <div class="project-tags">
+                            <span class="tag">Django</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">RESTful API</span>
+                        </div>
+                        <p>A complete e-commerce platform with inventory management, order processing, and customer management.</p>
+                        <a href="projects/project1.html" class="cta-button primary">View Details</a>
+                    </div>
+                </article>
+                
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="img/Eglis/Inicio Eglis.png" alt="Eglis S.A. - Remittance System">
+                    </div>
+                    <div class="project-info">
+                        <h3><a href="projects/project2.html">Eglis S.A. - Remittance System</a></h3>
+                        <div class="project-tags">
+                            <span class="tag">Django</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Fintech</span>
+                            <span class="tag">UX/UI</span>
+                        </div>
+                        <p>A financial web application designed to automate critical remittance and payment processes.</p>
+                        <a href="projects/project2.html" class="cta-button primary">View Details</a>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
     
     <footer>
-        <p>&copy; 2023 M&C Dev Studio. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo">
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@mcdevstudio.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 M&C Dev Studio. All rights reserved.</p>
+        </div>
     </footer>
     
     <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        // Update copyright year automatically
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('.footer-bottom p').textContent = `© ${currentYear} M&C Dev Studio. All rights reserved.`;
+        });
+    </script>
 </body>
 </html>
