@@ -1,0 +1,96 @@
+GUÍA DE RESOLUCIÓN DE PROBLEMAS - M&C DEV STUDIO SITIO WEB
+=============================================================
+
+Si estás experimentando problemas con el sitio web en el servidor, aquí hay algunas soluciones comunes:
+
+PROBLEMA 1: NO SE CARGAN LOS ESTILOS CSS O JAVASCRIPT
+-----------------------------------------------------
+1. Verifica que los archivos CSS y JS existan en el servidor en las carpetas correctas:
+   - /css/normalize.css
+   - /css/style.css
+   - /css/responsive.css
+   - /js/main.js
+   - /js/animations.js
+
+2. Asegúrate de que los permisos de archivo sean correctos:
+   - Para Linux/Unix: chmod 644 para archivos, chmod 755 para carpetas
+   - Para Windows: Asegúrate de que el usuario IIS_IUSRS tenga permisos de lectura
+
+3. Comprueba los MIME types en la configuración del servidor:
+   - Apache: El archivo .htaccess debe estar cargado en la raíz del sitio
+   - IIS: El archivo web.config debe estar en la raíz del sitio
+
+4. Desactiva la caché del navegador:
+   - Chrome: Ctrl+Shift+R o Ctrl+F5
+   - Firefox: Ctrl+Shift+R
+   - Safari: Command+Option+R
+   - Edge: Ctrl+Shift+R
+
+5. Verifica la consola del navegador (F12) para ver errores específicos.
+
+PROBLEMA 2: LAS IMÁGENES NO SE MUESTRAN
+--------------------------------------
+1. Verifica que las carpetas de imágenes existan en el servidor:
+   - /assets/logos/
+   - /assets/icons/
+   - /assets/team/
+
+2. Comprueba si los nombres de archivo tienen mayúsculas y minúsculas:
+   - Los servidores Linux distinguen entre mayúsculas y minúsculas
+   - Ej: 'Logo.png' no es lo mismo que 'logo.png'
+
+3. Asegúrate de que los formatos de imagen sean correctos y soportados.
+
+PROBLEMA 3: ERRORES 404 O PÁGINAS NO ENCONTRADAS
+----------------------------------------------
+1. Verifica que todos los archivos HTML existan en la raíz:
+   - index.html
+   - about.html
+   - projects.html
+   - contact.html
+   - team.html
+
+2. Revisa las configuraciones de URL amigables si las usas.
+
+3. Si usas un subdominio o carpeta para el sitio, actualiza la etiqueta <base> en el HTML:
+   - Ejemplo: <base href="/subcarpeta/">
+
+PROBLEMA 4: LA PÁGINA SE VE DIFERENTE EN DIFERENTES NAVEGADORES
+-------------------------------------------------------------
+1. Asegúrate de que normalize.css se esté cargando primero.
+
+2. Verifica que el navegador esté actualizado.
+
+3. Añade prefijos de proveedores (vendor prefixes) para propiedades CSS experimentales.
+
+PROBLEMA 5: PROBLEMAS DE HOSTING COMPARTIDO
+----------------------------------------
+1. Algunos hostings limitan el acceso a la configuración del servidor.
+   Soluciones alternativas:
+
+   a. Convierte las rutas relativas a rutas absolutas:
+      - href="css/style.css" → href="/css/style.css"
+
+   b. Usa rutas completas con el dominio si es necesario:
+      - href="https://tudominio.com/css/style.css"
+
+   c. Considera usar CDNs para las bibliotecas externas.
+
+   d. Contacta al soporte del hosting para solicitar la habilitación de los MIME types correctos.
+
+INSTRUCCIONES PARA ACTUALIZAR EL SITIO
+-----------------------------------
+1. Siempre haz una copia de seguridad antes de hacer cambios.
+
+2. Sube todos los archivos manteniendo la estructura de carpetas.
+
+3. Verifica los permisos de archivos después de subirlos.
+
+4. Limpia la caché del navegador para ver los cambios.
+
+CONTACTO PARA SOPORTE TÉCNICO
+--------------------------
+Si continúas teniendo problemas, contacta a:
+- Manuel: +53 55513196 (WhatsApp)
+- Carlos: +53 58270033 (WhatsApp)
+- Email: manuelmkt.marin1@gmail.com
