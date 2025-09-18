@@ -57,21 +57,30 @@
 @media (max-width: 768px) {
     header {
         padding: 10px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: var(--light-color);
     }
     
     .menu-toggle {
         display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .main-nav {
+        width: 100%;
         padding: 0;
-        flex-direction: column;
-        align-items: flex-start;
+        justify-content: center;
     }
     
     .nav-menu {
         display: none;
         flex-direction: column;
+        align-items: center;
         width: 100%;
         background: var(--light-color);
         position: absolute;
@@ -79,6 +88,7 @@
         left: 0;
         padding: 20px 0;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
     }
     
     .nav-menu.active {
@@ -87,11 +97,20 @@
     
     .nav-menu li {
         margin: 10px 20px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-menu li a {
+        width: 100%;
+        padding: 10px 0;
+        display: block;
     }
     
     .nav-cta {
         margin: 15px 20px;
         width: calc(100% - 40px);
+        text-align: center;
     }
 
     .nav-cta-button {
@@ -160,6 +179,23 @@
 
     p {
         font-size: 0.95rem;
+    }
+    
+    header {
+        padding: 10px 0;
+    }
+    
+    .logo {
+        padding: 0 10px;
+    }
+    
+    .logo img {
+        max-height: 50px;
+    }
+    
+    .menu-toggle {
+        right: 10px;
+        font-size: 1.3rem;
     }
 
     .hero-buttons, .cta-buttons {
