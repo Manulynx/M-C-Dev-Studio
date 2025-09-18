@@ -18,32 +18,126 @@
         <div class="logo">
             <img src="assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo">
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="team.html">Team</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div class="nav-cta">
+                <a href="contact.html" class="cta-button nav-cta-button">Get a Quote</a>
+            </div>
         </nav>
     </header>
     <main>
         <section class="hero">
-            <h1>Welcome to M&C Dev Studio</h1>
-            <p>Your partner in innovative software solutions.</p>
-            <a href="projects.html" class="cta-button">View Our Projects</a>
+            <div class="hero-content animate fade-in">
+                <h1>Welcome to M&C Dev Studio</h1>
+                <p class="tagline">Your partner in innovative software solutions.</p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="cta-button primary">View Our Projects</a>
+                    <a href="contact.html" class="cta-button secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-image animate slide-in-right">
+                <img src="assets/icons/M&C Dev.png" alt="Development Illustration">
+            </div>
         </section>
-        <section class="about-preview">
-            <h2>About Us</h2>
-            <p>We are a team of passionate developers dedicated to creating impactful software solutions.</p>
-            <a href="about.html" class="cta-button">Learn More</a>
+
+        <section class="services animate fade-in">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Custom websites and web applications tailored to your needs.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Apps</h3>
+                    <p>Native and cross-platform mobile applications.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Database Solutions</h3>
+                    <p>Efficient data storage and management systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-preview animate fade-in">
+            <div class="about-content">
+                <h2 class="section-title">About Us</h2>
+                <p>We are a team of passionate developers dedicated to creating impactful software solutions that help businesses grow and succeed in the digital world.</p>
+                <p>With expertise across various technologies and industries, we deliver high-quality products on time and within budget.</p>
+                <a href="about.html" class="cta-button primary">Learn More About Us</a>
+            </div>
+            <div class="about-image">
+                <img src="assets/logos/M&C Dev.png" alt="M&C Dev Team">
+            </div>
+        </section>
+
+        <section class="testimonials animate fade-in">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>M&C Dev Studio transformed our business with their innovative solutions. Highly recommended!</p>
+                    <div class="client-info">
+                        <strong>John Doe</strong>
+                        <span>CEO, Tech Solutions Inc.</span>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 M&C Dev Studio. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo">
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@mcdevstudio.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 M&C Dev Studio. All rights reserved.</p>
+        </div>
     </footer>
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
+    <script>
+        // Update copyright year automatically
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('.footer-bottom p').textContent = `© ${currentYear} M&C Dev Studio. All rights reserved.`;
+        });
+    </script>
 </body>
 </html>
