@@ -162,7 +162,7 @@
         font-size: 0.95rem;
     }
 
-    .hero-buttons {
+    .hero-buttons, .cta-buttons {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -170,6 +170,32 @@
 
     .cta-button.secondary {
         margin: 15px 0 0 0;
+    }
+    
+    /* Contact page specific */
+    .contact-hero {
+        padding: 60px 5%;
+    }
+    
+    .contact-methods {
+        padding: 50px 5%;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-card {
+        padding: 25px 15px;
+    }
+    
+    .contact-cta {
+        padding: 50px 5%;
+    }
+    
+    .contact-link {
+        font-size: 0.9rem;
+        word-break: break-all;
     }
 
     .footer-content {
