@@ -469,42 +469,94 @@ section {
     text-align: center;
 }
 
-.project-gallery {
-    position: relative;
+.project-showcase {
     margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-main-image {
+    position: relative;
+    width: 100%;
+    height: 500px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
-}
-
-.gallery-container {
-    display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    border-radius: 10px;
-}
-
-.gallery-img {
-    min-width: 100%;
-    height: 500px;
-    object-fit: contain;
     background-color: #f8f9fa;
 }
 
-.gallery-controls {
-    position: absolute;
+.project-main-image img {
     width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    pointer-events: none;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.5s ease;
 }
 
-.gallery-prev,
-.gallery-next {
-    background: rgba(255, 255, 255, 0.7);
+.project-main-image img.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    padding: 20px;
+    color: white;
+}
+
+.image-overlay h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.image-thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 75px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.thumbnail:hover {
+    opacity: 1;
+}
+
+.thumbnail.active {
+    border-color: var(--primary-color);
+    opacity: 1;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slideshow-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.control-button {
+    background: var(--primary-color);
+    color: white;
     border: none;
     width: 40px;
     height: 40px;
@@ -513,14 +565,17 @@ section {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    pointer-events: all;
-    transition: var(--transition);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-.gallery-prev:hover,
-.gallery-next:hover {
-    background: white;
+.control-button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.slideshow-status {
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .project-description {
@@ -737,6 +792,186 @@ footer {
     background: rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 20px 0;
+}
+
+/* Team Page Styles */
+.team-section {
+    background-color: var(--light-color);
+    padding: 80px 5%;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.team-member {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.member-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-overlay {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    transition: var(--transition);
+}
+
+.team-member:hover .social-overlay {
+    bottom: 0;
+}
+
+.social-overlay a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.social-overlay a:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.member-info {
+    padding: 25px;
+}
+
+.member-info h3 {
+    margin-bottom: 5px;
+    color: var(--dark-color);
+}
+
+.member-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: inline-block;
+    position: relative;
+}
+
+.member-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 40px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.member-details {
+    margin-top: 20px;
+}
+
+.expertise {
+    margin-top: 15px;
+}
+
+.expertise-title {
+    font-weight: 600;
+    color: var(--dark-color);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.expertise-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.expertise-items span {
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.team-values {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.team-values h3 {
+    margin-bottom: 40px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.value-item {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.value-icon i {
+    font-size: 30px;
+}
+
+.value-item h4 {
+    margin-bottom: 15px;
+    color: var(--dark-color);
 }
 
 /* Animation Classes */

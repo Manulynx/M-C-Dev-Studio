@@ -7,8 +7,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     });
     
+    // Add data-aos attributes to elements for animation
+    const addAOSAttributes = () => {
+        // Team section elements
+        document.querySelectorAll('.section-title').forEach(el => {
+            if (!el.hasAttribute('data-aos')) el.setAttribute('data-aos', 'fade-up');
+        });
+        
+        document.querySelectorAll('.team-member').forEach((el, index) => {
+            if (!el.hasAttribute('data-aos')) {
+                el.setAttribute('data-aos', 'fade-up');
+                el.setAttribute('data-aos-delay', index * 100);
+            }
+        });
+        
+        document.querySelectorAll('.value-item').forEach((el, index) => {
+            if (!el.hasAttribute('data-aos')) {
+                el.setAttribute('data-aos', 'fade-up');
+                el.setAttribute('data-aos-delay', index * 100);
+            }
+        });
+    };
+    
+    // Call function to add attributes
+    addAOSAttributes();
+    
     // Scroll animations
-    const elementsToAnimate = document.querySelectorAll('.animate:not(.fade-in):not(.slide-in-left):not(.slide-in-right)');
+    const elementsToAnimate = document.querySelectorAll('.animate:not(.fade-in):not(.slide-in-left):not(.slide-in-right), [data-aos]');
     
     // Function to check if element is in viewport
     function isElementInViewport(el) {
@@ -27,6 +52,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(() => {
                         element.classList.add('slide-up');
                     }, 200 * Array.from(element.parentNode.children).indexOf(element));
+                } else if (element.hasAttribute('data-aos')) {
+                    const delay = element.getAttribute('data-aos-delay') || 0;
+                    setTimeout(() => {
+                        element.classList.add('fade-in');
+                    }, delay);
                 } else {
                     element.classList.add('fade-in');
                 }
@@ -64,5 +94,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 setInterval(showNextTestimonial, 5000);
             }
         }
+    }
+    
+    // Initialize mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
     }
 });

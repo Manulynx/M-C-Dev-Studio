@@ -3,52 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&C Dev Studio - Team</title>
+    <title>M&C Dev Studio - Our Team</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/icons/M&C Dev.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Meet Our Team</h1>
-        <nav>
-            <ul>
+        <div class="logo">
+            <img src="assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo">
+        </div>
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="team.html">Team</a></li>
+                <li><a href="team.html" class="active">Team</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div class="nav-cta">
+                <a href="contact.html" class="cta-button nav-cta-button">Get a Quote</a>
+            </div>
         </nav>
     </header>
     
     <main>
-        <section class="team-members">
-            <article class="team-member">
-                <h2>John Doe</h2>
-                <p>Role: Lead Developer</p>
-                <p>Bio: John has over 10 years of experience in software development and is passionate about creating innovative solutions.</p>
-            </article>
-            <article class="team-member">
-                <h2>Jane Smith</h2>
-                <p>Role: UI/UX Designer</p>
-                <p>Bio: Jane specializes in user experience design and is dedicated to making applications user-friendly and visually appealing.</p>
-            </article>
-            <article class="team-member">
-                <h2>Emily Johnson</h2>
-                <p>Role: Project Manager</p>
-                <p>Bio: Emily ensures that projects are delivered on time and within budget, coordinating between clients and the development team.</p>
-            </article>
-            <article class="team-member">
-                <h2>Michael Brown</h2>
-                <p>Role: Frontend Developer</p>
-                <p>Bio: Michael is skilled in HTML, CSS, and JavaScript, and loves bringing designs to life through code.</p>
-            </article>
+        <section class="team-section">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Meet Our Team</h2>
+            </div>
+            
+            <div class="team-container">
+                <div class="team-member" data-aos="fade-up">
+                    <div class="member-image">
+                        <img src="assets/team/manuel.jpg" alt="Manuel Ernesto Marin Castillo" onerror="this.src='https://via.placeholder.com/300x300?text=Manuel+Marin'">
+                        <div class="social-overlay">
+                            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="mailto:manuel@mcdevstudio.com"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Manuel Ernesto Marin Castillo</h3>
+                        <p class="member-title">Software Engineer</p>
+                        <div class="member-details">
+                            <p>Computer Science Engineer with expertise in backend development, database design, and API development. Specializes in Django, Python, and building scalable web applications.</p>
+                            <div class="expertise">
+                                <span class="expertise-title">Expertise:</span>
+                                <div class="expertise-items">
+                                    <span>Django</span>
+                                    <span>Python</span>
+                                    <span>RESTful APIs</span>
+                                    <span>Database Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-image">
+                        <img src="assets/team/carlos.jpg" alt="Carlos Daniel Verona Mejias" onerror="this.src='https://via.placeholder.com/300x300?text=Carlos+Verona'">
+                        <div class="social-overlay">
+                            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="mailto:carlos@mcdevstudio.com"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Carlos Daniel Verona Mejias</h3>
+                        <p class="member-title">Software Engineer</p>
+                        <div class="member-details">
+                            <p>Computer Science Engineer with a strong background in frontend development and user interface design. Expert in creating responsive, user-friendly applications with modern JavaScript frameworks.</p>
+                            <div class="expertise">
+                                <span class="expertise-title">Expertise:</span>
+                                <div class="expertise-items">
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                    <span>UI/UX Design</span>
+                                    <span>Frontend Development</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-values" data-aos="fade-up">
+                <h3>Our Approach</h3>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Communication</h4>
+                        <p>We believe clear communication is key to project success. We maintain regular updates and are always available to discuss your needs.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h4>Collaboration</h4>
+                        <p>Our team works seamlessly together, combining their strengths to deliver comprehensive solutions to complex problems.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Innovation</h4>
+                        <p>We stay at the forefront of technology, constantly exploring new approaches to create cutting-edge solutions.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                        <h4>Quality Assurance</h4>
+                        <p>We implement rigorous testing processes to ensure our deliverables meet the highest standards of quality and reliability.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 M&C Dev Studio. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo">
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@mcdevstudio.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 M&C Dev Studio. All rights reserved.</p>
+        </div>
     </footer>
     
     <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        // Update copyright year automatically
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('.footer-bottom p').textContent = `© ${currentYear} M&C Dev Studio. All rights reserved.`;
+        });
+    </script>
 </body>
 </html>

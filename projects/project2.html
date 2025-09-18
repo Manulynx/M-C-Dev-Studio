@@ -45,16 +45,32 @@
                 <span class="tag">UX/UI</span>
             </div>
             
-            <div class="project-gallery">
-                <div class="gallery-container">
-                    <img src="../img/Eglis/Inicio Eglis.png" alt="Página de inicio" class="gallery-img">
-                    <img src="../img/Eglis/Eglis FormRem.png" alt="Formulario de remesas" class="gallery-img">
-                    <img src="../img/Eglis/Eglis NavBar.png" alt="Barra de navegación" class="gallery-img">
-                    <img src="../img/Eglis/Eglis FormEnv.png" alt="Formulario de envío" class="gallery-img">
+            <div class="project-showcase">
+                <div class="project-main-image">
+                    <img src="../img/Eglis/Inicio Eglis.png" alt="Página de inicio" id="mainProjectImage">
+                    <div class="image-overlay">
+                        <h3 id="imageCaption">Página de inicio</h3>
+                    </div>
                 </div>
-                <div class="gallery-controls">
-                    <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                <div class="image-thumbnails">
+                    <div class="thumbnail active" data-img="../img/Eglis/Inicio Eglis.png" data-caption="Página de inicio">
+                        <img src="../img/Eglis/Inicio Eglis.png" alt="Miniatura - Página de inicio">
+                    </div>
+                    <div class="thumbnail" data-img="../img/Eglis/Eglis FormRem.png" data-caption="Formulario de remesas">
+                        <img src="../img/Eglis/Eglis FormRem.png" alt="Miniatura - Formulario de remesas">
+                    </div>
+                    <div class="thumbnail" data-img="../img/Eglis/Eglis NavBar.png" data-caption="Barra de navegación">
+                        <img src="../img/Eglis/Eglis NavBar.png" alt="Miniatura - Barra de navegación">
+                    </div>
+                    <div class="thumbnail" data-img="../img/Eglis/Eglis FormEnv.png" data-caption="Formulario de envío">
+                        <img src="../img/Eglis/Eglis FormEnv.png" alt="Miniatura - Formulario de envío">
+                    </div>
+                </div>
+                <div class="slideshow-controls">
+                    <button id="playPauseBtn" class="control-button">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <span class="slideshow-status">Iniciar presentación</span>
                 </div>
             </div>
             
@@ -141,33 +157,67 @@
     <script src="../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Gallery functionality
-            const galleryContainer = document.querySelector('.gallery-container');
-            const prevButton = document.querySelector('.gallery-prev');
-            const nextButton = document.querySelector('.gallery-next');
-            const images = document.querySelectorAll('.gallery-img');
+            // Project image showcase functionality
+            const mainImage = document.getElementById('mainProjectImage');
+            const imageCaption = document.getElementById('imageCaption');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const slideshowStatus = document.querySelector('.slideshow-status');
+            
             let currentIndex = 0;
+            let slideshowInterval;
+            let isPlaying = false;
+            const slideshowDelay = 3000; // 3 seconds
             
-            // Set initial state
-            updateGallery();
+            // Initialize thumbnails click events
+            thumbnails.forEach((thumb, index) => {
+                thumb.addEventListener('click', function() {
+                    updateActiveImage(index);
+                });
+            });
             
-            // Event listeners
-            prevButton.addEventListener('click', showPreviousImage);
-            nextButton.addEventListener('click', showNextImage);
+            // Handle play/pause button
+            playPauseBtn.addEventListener('click', toggleSlideshow);
             
-            function showPreviousImage() {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-                updateGallery();
+            function updateActiveImage(index) {
+                // Update current index
+                currentIndex = index;
+                
+                // Update main image and caption
+                const activeThumb = thumbnails[index];
+                mainImage.src = activeThumb.getAttribute('data-img');
+                imageCaption.textContent = activeThumb.getAttribute('data-caption');
+                
+                // Update active thumbnail
+                thumbnails.forEach(t => t.classList.remove('active'));
+                activeThumb.classList.add('active');
+                
+                // Add fade-in animation
+                mainImage.classList.remove('fade-in');
+                void mainImage.offsetWidth; // Trigger reflow
+                mainImage.classList.add('fade-in');
             }
             
-            function showNextImage() {
-                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-                updateGallery();
+            function nextImage() {
+                let nextIndex = (currentIndex + 1) % thumbnails.length;
+                updateActiveImage(nextIndex);
             }
             
-            function updateGallery() {
-                const offset = -currentIndex * 100;
-                galleryContainer.style.transform = `translateX(${offset}%)`;
+            function toggleSlideshow() {
+                if (isPlaying) {
+                    // Stop slideshow
+                    clearInterval(slideshowInterval);
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    slideshowStatus.textContent = 'Iniciar presentación';
+                    isPlaying = false;
+                } else {
+                    // Start slideshow
+                    nextImage(); // Show next image immediately
+                    slideshowInterval = setInterval(nextImage, slideshowDelay);
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    slideshowStatus.textContent = 'Pausar presentación';
+                    isPlaying = true;
+                }
             }
         });
     </script>

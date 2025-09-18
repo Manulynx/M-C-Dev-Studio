@@ -13,12 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Close mobile menu if open
                 const navMenu = document.querySelector('.nav-menu');
-                if (navMenu.classList.contains('active')) {
+                if (navMenu && navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
                 }
             }
         });
     });
+    
+    // Update copyright year
+    const copyrightYear = document.querySelector('.footer-bottom p');
+    if (copyrightYear) {
+        const currentYear = new Date().getFullYear();
+        copyrightYear.innerHTML = `&copy; ${currentYear} M&C Dev Studio. All rights reserved.`;
+    }
 
     // Toggle mobile menu
     const menuToggle = document.querySelector('.menu-toggle');

@@ -116,9 +116,27 @@
         margin: 0 auto;
     }
 
-    .team-member {
+    /* Team Page */
+    .team-container {
         flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-member {
+        max-width: 100%;
+    }
+    
+    .member-info {
         text-align: center;
+    }
+    
+    .member-title:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .expertise-items {
+        justify-content: center;
     }
 
     .footer-content {
