@@ -167,6 +167,11 @@ header {
     color: var(--primary-color);
 }
 
+/* Estilos explícitos para el menú móvil activo */
+.nav-menu.active {
+    display: flex !important;
+}
+
 .cta-button {
     display: inline-block;
     padding: 12px 25px;

@@ -78,7 +78,7 @@
     }
     
     .nav-menu {
-        display: none;
+        display: none !important; /* Forzar display:none */
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -92,7 +92,7 @@
     }
     
     .nav-menu.active {
-        display: flex;
+        display: flex !important; /* Forzar display:flex cuando está activo */
     }
     
     .nav-menu li {

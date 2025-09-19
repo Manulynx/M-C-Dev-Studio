@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // MENÚ MÓVIL - IMPLEMENTACIÓN SIMPLIFICADA
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (menuToggle && navMenu) {
+        // Método simplificado para mostrar/ocultar menú
+        menuToggle.addEventListener('click', function() {
+            console.log('Menu toggle clicked'); // Para debugging
+            navMenu.classList.toggle('active');
+        });
+    }
+    
     // Smooth scrolling for internal links
     const internalLinks = document.querySelectorAll('a[href^="#"]');
     internalLinks.forEach(link => {
@@ -12,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Close mobile menu if open
-                const navMenu = document.querySelector('.nav-menu');
                 if (navMenu && navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
                 }
@@ -25,46 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (copyrightYear) {
         const currentYear = new Date().getFullYear();
         copyrightYear.innerHTML = `&copy; ${currentYear} M&C Dev Studio. All rights reserved.`;
-    }
-
-    // Toggle mobile menu
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (menuToggle && navMenu) {
-        // Toggle menu on click
-        menuToggle.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent the click from bubbling to document
-            navMenu.classList.toggle('active');
-            
-            // Add aria attributes for accessibility
-            const expanded = navMenu.classList.contains('active') ? 'true' : 'false';
-            menuToggle.setAttribute('aria-expanded', expanded);
-        });
-        
-        // Close menu when clicking anywhere else on the page
-        document.addEventListener('click', function(e) {
-            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-        
-        // Close menu when escape key is pressed
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-        
-        // Close menu when clicking a nav item
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
     }
 
     // Project filter functionality if on projects page
