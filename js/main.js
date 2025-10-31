@@ -137,3 +137,62 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function initMobileNav() {
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.nav-menu');
+  if (!toggle || !menu) return;
+
+  const closeMenu = () => {
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+  });
+}
+
+function initDynamicYear() {
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+}
+
+function initLazyImages() {
+  const imgs = document.querySelectorAll('img[loading="lazy"]');
+  if ('loading' in HTMLImageElement.prototype) return; // nativo
+  // Fallback simple
+  imgs.forEach(img => {
+    const src = img.getAttribute('src');
+    if (src) {
+      const i = new Image();
+      i.src = src;
+      i.onload = () => { img.src = src; };
+    }
+  });
+}
+
+function initSmoothNavCta() {
+  const cta = document.querySelector('.nav-cta .cta-button[href^="#"]');
+  if (!cta) return;
+  cta.addEventListener('click', (e) => {
+    const id = cta.getAttribute('href');
+    const target = id ? document.querySelector(id) : null;
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileNav();
+  initDynamicYear();
+  initLazyImages();
+  initSmoothNavCta();
+});

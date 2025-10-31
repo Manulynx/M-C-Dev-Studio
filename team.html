@@ -68,8 +68,10 @@
                 
                 <div class="team-member" data-aos="fade-up" data-aos-delay="100">
                     <div class="member-image">
-                        <img src="assets/team/Carlos.jpeg" alt="Carlos Daniel Verona Mejias" onerror="this.src='https://via.placeholder.com/300x300?text=Carlos+Verona'">
-                       
+                        <img src="assets/team/Carlos.jpeg"
+                             alt="Carlos Daniel Verona Mejias"
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/300x300?text=Carlos+Verona'">
                     </div>
                     <div class="member-info">
                         <h3>Carlos Daniel Verona Mejias</h3>
@@ -128,19 +130,19 @@
 
     <footer>
         <div class="footer-content">
-            
+            <!-- existing footer content if any -->
+        </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 M&C Dev Studio. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> M&C Dev Studio. All rights reserved.</p>
         </div>
     </footer>
-    
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
     <script>
         // Update copyright year automatically
         document.addEventListener('DOMContentLoaded', function() {
             const currentYear = new Date().getFullYear();
-            document.querySelector('.footer-bottom p').textContent = `© ${currentYear} M&C Dev Studio. All rights reserved.`;
+            document.querySelector('#year').textContent = currentYear;
         });
     </script>
 </body>

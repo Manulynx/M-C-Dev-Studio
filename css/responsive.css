@@ -263,3 +263,28 @@
         justify-content: center;
     }
 }
+
+@media (max-width: 900px) {
+  .nav-cta { display: none; }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 1rem;
+    left: 1rem;
+    padding: .75rem;
+    background: rgba(22,26,43,.95);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .nav-menu.is-open { display: flex; }
+  .menu-toggle { display: inline-flex; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .team-container { grid-template-columns: 1fr; }
+}

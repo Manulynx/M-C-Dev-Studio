@@ -38,7 +38,7 @@
             <div class="projects-grid">
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="img/LikeHome/Carrito pc.png" alt="LikeHome E-commerce Platform">
+                        <img src="img/LikeHome/Carrito pc.png" alt="LikeHome E-commerce Platform" loading="lazy" width="800" height="450">
                     </div>
                     <div class="project-info">
                         <h3><a href="projects/project1.html">LikeHome E-commerce Platform</a></h3>
@@ -55,7 +55,7 @@
                 
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="img/Eglis/Inicio Eglis.png" alt="Eglis S.A. - Remittance System">
+                        <img src="img/Eglis/Inicio Eglis.png" alt="Eglis S.A. - Remittance System" loading="lazy" width="800" height="450">
                     </div>
                     <div class="project-info">
                         <h3><a href="projects/project2.html">Eglis S.A. - Remittance System</a></h3>
@@ -75,14 +75,15 @@
     
     <footer>
         <div class="footer-content">
-            
+            <!-- existing footer content if any -->
+        </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 M&C Dev Studio. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> M&C Dev Studio. All rights reserved.</p>
         </div>
     </footer>
     
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
     <script>
         // Update copyright year automatically
         document.addEventListener('DOMContentLoaded', function() {

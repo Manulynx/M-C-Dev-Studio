@@ -16,19 +16,21 @@
 <body>
     <header>
         <div class="logo">
-            <img src="../assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo">
+            <img src="../assets/logos/M&C Dev.png" alt="M&C Dev Studio Logo" loading="lazy">
         </div>
         <nav class="main-nav">
-            <button class="menu-toggle" aria-label="Toggle menu">
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../projects.html" class="active" aria-current="page">Projects</a></li>
                 <li><a href="../team.html">Team</a></li>
                 <li><a href="../contact.html">Contact</a></li>
             </ul>
-            
+            <div class="nav-cta">
+                <a href="../contact.html" class="cta-button nav-cta-button">Get a Quote</a>
+            </div>
         </nav>
     </header>
     
@@ -45,26 +47,26 @@
             
             <div class="project-showcase">
                 <div class="project-main-image">
-                    <img src="../img/LikeHome/carrito movil.png" alt="Vista móvil del carrito de compras" id="mainProjectImage">
+                    <img src="../img/LikeHome/carrito movil.png" alt="Vista móvil del carrito de compras" id="mainProjectImage" loading="lazy">
                     <div class="image-overlay">
                         <h3 id="imageCaption">Vista móvil del carrito de compras</h3>
                     </div>
                 </div>
                 <div class="image-thumbnails">
                     <div class="thumbnail active" data-img="../img/LikeHome/carrito movil.png" data-caption="Vista móvil del carrito de compras">
-                        <img src="../img/LikeHome/carrito movil.png" alt="Miniatura - Vista móvil del carrito de compras">
+                        <img src="../img/LikeHome/carrito movil.png" alt="Miniatura - Vista móvil del carrito de compras" loading="lazy">
                     </div>
                     <div class="thumbnail" data-img="../img/LikeHome/EditarInv Like-Home.png" data-caption="Panel de edición de inventario">
-                        <img src="../img/LikeHome/EditarInv Like-Home.png" alt="Miniatura - Panel de edición de inventario">
+                        <img src="../img/LikeHome/EditarInv Like-Home.png" alt="Miniatura - Panel de edición de inventario" loading="lazy">
                     </div>
                     <div class="thumbnail" data-img="../img/LikeHome/Inventario Like-Home.png" data-caption="Panel de inventario">
-                        <img src="../img/LikeHome/Inventario Like-Home.png" alt="Miniatura - Panel de inventario">
+                        <img src="../img/LikeHome/Inventario Like-Home.png" alt="Miniatura - Panel de inventario" loading="lazy">
                     </div>
                     <div class="thumbnail" data-img="../img/LikeHome/Carrito pc.png" data-caption="Sistema de carrito de compras e-commerce">
-                        <img src="../img/LikeHome/Carrito pc.png" alt="Miniatura - Sistema de carrito de compras e-commerce">
+                        <img src="../img/LikeHome/Carrito pc.png" alt="Miniatura - Sistema de carrito de compras e-commerce" loading="lazy">
                     </div>
                     <div class="thumbnail" data-img="../img/LikeHome/Inicio Admin-Like-Home.png" data-caption="Panel de administración">
-                        <img src="../img/LikeHome/Inicio Admin-Like-Home.png" alt="Miniatura - Panel de administración">
+                        <img src="../img/LikeHome/Inicio Admin-Like-Home.png" alt="Miniatura - Panel de administración" loading="lazy">
                     </div>
                     
                 </div>
@@ -128,11 +130,12 @@
         <div class="footer-content">
            
         <div class="footer-bottom">
-            <p>&copy; 2025 M&C Dev Studio. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> M&C Dev Studio. All rights reserved.</p>
         </div>
     </footer>
     
-    <script src="../js/main.js"></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/main.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Project image showcase functionality
