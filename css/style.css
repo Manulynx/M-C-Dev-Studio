@@ -1,3 +1,14 @@
+/* Performance optimizations */
+* {
+    box-sizing: border-box;
+}
+
+/* Optimize for mobile scrolling */
+body {
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0); /* Force hardware acceleration */
+}
+
 /* Design System Overrides */
 :root {
     /* Dark palette (decorative gradients) */
@@ -24,7 +35,7 @@
     --text-color: #333333; /* default dark text */
     --text-light: #ffffff; /* text on dark bg */
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
+    --transition: all 0.2s ease;
 }
 
 html, body {
@@ -68,7 +79,7 @@ p {
 a {
     text-decoration: none;
     color: var(--primary-color);
-    transition: var(--transition);
+    transition: color 0.2s ease;
 }
 
 a:hover {
@@ -127,7 +138,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    transition: all 0.3s ease;
+    transition: none; /* Removed transition to prevent flicker */
 }
 
 .nav-menu a {
@@ -166,7 +177,7 @@ header {
     width: 0;
     height: 2px;
     background: var(--primary-color);
-    transition: var(--transition);
+    transition: width 0.2s ease;
 }
 
 .nav-menu li a:hover::after,
@@ -325,11 +336,12 @@ section {
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     text-align: center;
-    transition: var(--transition);
+    transition: transform 0.2s ease;
+    will-change: transform; /* Optimize for animations */
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px); /* Reduced movement to prevent flicker */
 }
 
 .service-card i {
@@ -443,11 +455,12 @@ section {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
-    transition: var(--transition);
+    transition: transform 0.2s ease;
+    will-change: transform;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 
 .project-image {
@@ -459,11 +472,11 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 }
 
 .project-card:hover .project-image img {
-    transform: scale(1.05);
+    transform: scale(1.02); /* Reduced scale to prevent flicker */
 }
 
 .project-info {
@@ -736,15 +749,16 @@ section {
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     text-align: center;
-    transition: var(--transition);
+    transition: transform 0.2s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    will-change: transform;
 }
 
 .contact-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-3px);
 }
 
 .contact-icon {
@@ -983,6 +997,24 @@ footer {
 
 /* Mobile-specific styles */
 @media (max-width: 768px) {
+    /* Disable complex animations on mobile to prevent flicker */
+    .service-card:hover,
+    .project-card:hover,
+    .contact-card:hover,
+    .team-member:hover,
+    .value-item:hover {
+        transform: none !important;
+    }
+    
+    /* Simplify transitions on mobile */
+    .service-card,
+    .project-card,
+    .contact-card,
+    .team-member,
+    .value-item {
+        transition: none;
+    }
+    
     .menu-toggle, 
     .nav-menu, 
     .nav-cta {
@@ -1038,11 +1070,12 @@ footer {
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     overflow: hidden;
-    transition: var(--transition);
+    transition: transform 0.2s ease;
+    will-change: transform;
 }
 
 .team-member:hover {
-    transform: translateY(-10px);
+    transform: translateY(-3px);
 }
 
 .member-image {
@@ -1067,7 +1100,7 @@ footer {
     gap: 15px;
     padding: 15px 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    transition: var(--transition);
+    transition: bottom 0.2s ease;
 }
 
 .team-member:hover .social-overlay {
@@ -1169,11 +1202,12 @@ footer {
     padding: 30px;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
-    transition: var(--transition);
+    transition: transform 0.2s ease;
+    will-change: transform;
 }
 
 .value-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
 .value-icon {
@@ -1222,16 +1256,18 @@ footer {
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -1242,7 +1278,7 @@ footer {
 @keyframes slideInLeft {
     from {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-30px);
     }
     to {
         opacity: 1;
@@ -1253,7 +1289,7 @@ footer {
 @keyframes slideInRight {
     from {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(30px);
     }
     to {
         opacity: 1;

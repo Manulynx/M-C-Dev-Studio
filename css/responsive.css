@@ -55,6 +55,12 @@
 
 /* Tablets */
 @media (max-width: 768px) {
+    /* Optimize performance on mobile */
+    * {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
     header {
         padding: 10px 0;
         position: sticky;
@@ -78,7 +84,7 @@
     }
     
     .nav-menu {
-        display: none !important; /* Forzar display:none */
+        display: none !important; /* Force display:none */
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -92,7 +98,7 @@
     }
     
     .nav-menu.active {
-        display: flex !important; /* Forzar display:flex cuando está activo */
+        display: flex !important; /* Force display:flex when active */
     }
     
     .nav-menu li {
@@ -105,6 +111,7 @@
         width: 100%;
         padding: 10px 0;
         display: block;
+        transition: none; /* Remove transitions on mobile */
     }
     
     .nav-cta {
