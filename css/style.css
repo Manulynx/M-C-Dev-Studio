@@ -1,14 +1,3 @@
-/* Performance optimizations */
-* {
-    box-sizing: border-box;
-}
-
-/* Optimize for mobile scrolling */
-body {
-    -webkit-overflow-scrolling: touch;
-    transform: translateZ(0); /* Force hardware acceleration */
-}
-
 /* Design System Overrides */
 :root {
     /* Dark palette (decorative gradients) */
@@ -35,7 +24,7 @@ body {
     --text-color: #333333; /* default dark text */
     --text-light: #ffffff; /* text on dark bg */
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --transition: all 0.2s ease;
+    --transition: all 0.3s ease;
 }
 
 html, body {
@@ -51,8 +40,6 @@ body {
     color: var(--dark-color); /* ensure strong contrast by default */
     background-color: var(--light-color);
     overflow-x: hidden;
-    padding-bottom: 80px !important; /* Always ensure space for bottom nav */
-    position: relative !important; /* Ensure proper stacking context */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -81,7 +68,7 @@ p {
 a {
     text-decoration: none;
     color: var(--primary-color);
-    transition: color 0.2s ease;
+    transition: var(--transition);
 }
 
 a:hover {
@@ -140,7 +127,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    transition: none; /* Removed transition to prevent flicker */
+    transition: all 0.3s ease;
 }
 
 .nav-menu a {
@@ -179,7 +166,7 @@ header {
     width: 0;
     height: 2px;
     background: var(--primary-color);
-    transition: width 0.2s ease;
+    transition: var(--transition);
 }
 
 .nav-menu li a:hover::after,
@@ -338,12 +325,11 @@ section {
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     text-align: center;
-    transition: transform 0.2s ease;
-    will-change: transform; /* Optimize for animations */
+    transition: var(--transition);
 }
 
 .service-card:hover {
-    transform: translateY(-5px); /* Reduced movement to prevent flicker */
+    transform: translateY(-10px);
 }
 
 .service-card i {
@@ -457,12 +443,11 @@ section {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
-    transition: transform 0.2s ease;
-    will-change: transform;
+    transition: var(--transition);
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 
 .project-image {
@@ -474,11 +459,11 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .project-card:hover .project-image img {
-    transform: scale(1.02); /* Reduced scale to prevent flicker */
+    transform: scale(1.05);
 }
 
 .project-info {
@@ -751,16 +736,15 @@ section {
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     text-align: center;
-    transition: transform 0.2s ease;
+    transition: var(--transition);
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    will-change: transform;
 }
 
 .contact-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-10px);
 }
 
 .contact-icon {
@@ -961,24 +945,18 @@ footer {
   text-shadow: 0 1px 2px rgba(0,0,0,.35);
 }
 
-/* Mobile Navigation Bar - Fixed Bottom - Always Visible */
+/* Mobile Navigation Bar - Fixed Bottom */
 .mobile-action-buttons {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background: white;
-    display: flex !important; /* Always visible */
+    display: none; /* Hidden by default, shown only on mobile */
     justify-content: space-around;
     padding: 10px 0;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 9999 !important; /* High z-index to ensure it's always on top */
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    /* Additional properties to ensure it stays fixed */
-    transform: translateZ(0); /* Force hardware acceleration */
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    z-index: 100;
 }
 
 .mobile-action-buttons a {
@@ -1005,24 +983,6 @@ footer {
 
 /* Mobile-specific styles */
 @media (max-width: 768px) {
-    /* Disable complex animations on mobile to prevent flicker */
-    .service-card:hover,
-    .project-card:hover,
-    .contact-card:hover,
-    .team-member:hover,
-    .value-item:hover {
-        transform: none !important;
-    }
-    
-    /* Simplify transitions on mobile */
-    .service-card,
-    .project-card,
-    .contact-card,
-    .team-member,
-    .value-item {
-        transition: none;
-    }
-    
     .menu-toggle, 
     .nav-menu, 
     .nav-cta {
@@ -1049,38 +1009,13 @@ footer {
         margin: 0 auto;
     }
     
+    .mobile-action-buttons {
+        display: flex !important;
+    }
+    
     /* Add padding to body to compensate for fixed bottom navigation */
     body {
-        padding-bottom: 80px !important;
-    }
-}
-
-/* Desktop styles - hide traditional nav on all sizes now */
-@media (min-width: 769px) {
-    .menu-toggle, 
-    .nav-menu, 
-    .nav-cta {
-        display: none !important;
-    }
-    
-    .main-nav {
-        display: none !important;
-    }
-    
-    header {
-        justify-content: center !important;
-        padding: 15px 0 !important;
-    }
-    
-    .logo {
-        text-align: center;
-        padding: 0;
-        width: 100%;
-    }
-    
-    /* Add padding to body for bottom navigation on all screen sizes */
-    body {
-        padding-bottom: 80px !important;
+        padding-bottom: 65px;
     }
 }/* Team Page Styles */
 .team-section {
@@ -1103,12 +1038,11 @@ footer {
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     overflow: hidden;
-    transition: transform 0.2s ease;
-    will-change: transform;
+    transition: var(--transition);
 }
 
 .team-member:hover {
-    transform: translateY(-3px);
+    transform: translateY(-10px);
 }
 
 .member-image {
@@ -1133,7 +1067,7 @@ footer {
     gap: 15px;
     padding: 15px 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    transition: bottom 0.2s ease;
+    transition: var(--transition);
 }
 
 .team-member:hover .social-overlay {
@@ -1235,12 +1169,11 @@ footer {
     padding: 30px;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
-    transition: transform 0.2s ease;
-    will-change: transform;
+    transition: var(--transition);
 }
 
 .value-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
 .value-icon {
@@ -1289,18 +1222,16 @@ footer {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(50px);
     }
     to {
         opacity: 1;
@@ -1311,7 +1242,7 @@ footer {
 @keyframes slideInLeft {
     from {
         opacity: 0;
-        transform: translateX(-30px);
+        transform: translateX(-100px);
     }
     to {
         opacity: 1;
@@ -1322,7 +1253,7 @@ footer {
 @keyframes slideInRight {
     from {
         opacity: 0;
-        transform: translateX(30px);
+        transform: translateX(100px);
     }
     to {
         opacity: 1;
