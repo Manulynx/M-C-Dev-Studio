@@ -13,73 +13,88 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Estilos para ocultar el menú y botón en vista móvil -->
+    <!-- Estilos para ocultar el menú tradicional y mostrar navbar inferior siempre -->
     <style>
+        /* Hide traditional navigation on all screen sizes */
+        .menu-toggle, 
+        .nav-menu, 
+        .nav-cta {
+            display: none !important;
+        }
+        
+        .main-nav {
+            display: none !important;
+        }
+        
+        header {
+            justify-content: center !important;
+            padding: 15px 0 !important;
+        }
+        
+        .logo {
+            text-align: center;
+            padding: 0;
+            width: 100%;
+        }
+        
+        .logo img {
+            max-height: 60px;
+            margin: 0 auto;
+        }
+        
+        /* Bottom navigation always visible */
+        .mobile-action-buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        
+        .mobile-action-buttons a {
+            text-align: center;
+            padding: 8px 0;
+            flex: 1;
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .mobile-action-buttons i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .mobile-home-button {
+            color: var(--primary-color) !important;
+        }
+        
+        /* Add padding to body for fixed bottom navigation */
+        body {
+            padding-bottom: 65px;
+        }
+        
+        /* Mobile specific adjustments */
         @media (max-width: 768px) {
-            .menu-toggle, 
-            .nav-menu, 
-            .nav-cta {
-                display: none !important;
-            }
-            
-            .main-nav {
-                display: none !important;
-            }
-            
             header {
-                justify-content: center !important;
                 padding: 10px 0 !important;
             }
             
-            .logo {
-                text-align: center;
-                padding: 0;
-                width: 100%;
-            }
-            
             .logo img {
-                max-height: 60px;
-                margin: 0 auto;
-            }
-            
-            /* Botones de acción fijos en la parte inferior para acceso móvil */
-            .mobile-action-buttons {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                background: white;
-                display: flex;
-                justify-content: space-around;
-                padding: 10px 0;
-                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-                z-index: 100;
+                max-height: 50px;
             }
             
             .mobile-action-buttons a {
-                text-align: center;
-                padding: 8px 0;
-                flex: 1;
-                color: var(--dark-color);
-                font-weight: 500;
-                font-size: 0.85rem;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .mobile-action-buttons i {
-                font-size: 1.2rem;
-                margin-bottom: 5px;
-            }
-            
-            .mobile-home-button {
-                color: var(--primary-color) !important;
-            }
-            
-            /* Añadir padding al final del body para el espacio de los botones fijos */
-            body {
-                padding-bottom: 65px;
+                font-size: 0.8rem;
             }
         }
     </style>

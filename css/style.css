@@ -959,14 +959,14 @@ footer {
   text-shadow: 0 1px 2px rgba(0,0,0,.35);
 }
 
-/* Mobile Navigation Bar - Fixed Bottom */
+/* Mobile Navigation Bar - Fixed Bottom - Always Visible */
 .mobile-action-buttons {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     background: white;
-    display: none; /* Hidden by default, shown only on mobile */
+    display: flex; /* Always visible */
     justify-content: space-around;
     padding: 10px 0;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
@@ -1041,11 +1041,36 @@ footer {
         margin: 0 auto;
     }
     
-    .mobile-action-buttons {
-        display: flex !important;
+    /* Add padding to body to compensate for fixed bottom navigation */
+    body {
+        padding-bottom: 65px;
+    }
+}
+
+/* Desktop styles - hide traditional nav on all sizes now */
+@media (min-width: 769px) {
+    .menu-toggle, 
+    .nav-menu, 
+    .nav-cta {
+        display: none !important;
     }
     
-    /* Add padding to body to compensate for fixed bottom navigation */
+    .main-nav {
+        display: none !important;
+    }
+    
+    header {
+        justify-content: center !important;
+        padding: 15px 0 !important;
+    }
+    
+    .logo {
+        text-align: center;
+        padding: 0;
+        width: 100%;
+    }
+    
+    /* Add padding to body for bottom navigation on all screen sizes */
     body {
         padding-bottom: 65px;
     }
