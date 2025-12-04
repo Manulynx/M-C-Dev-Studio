@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="M&C Dev Studio - Desarrollo Web a Medida para Mipymes en Cuba. Soluciones rápidas, modernas y efectivas.">
+    <meta name="keywords" content="desarrollo web cuba, mipymes cuba, tienda online cuba, landing page cuba">
+    <title>M&C Dev Studio | Desarrollo Web para Mipymes en Cuba</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0a0a0a',
+                        'dark-card': '#1a1a1a',
+                        'dark-border': '#2a2a2a',
+                        'neon-blue': '#00d4ff',
+                        'neon-green': '#00ff88',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Smooth gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Glow effect */
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .glow-effect:hover {
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-bg text-gray-100 font-sans antialiased">
+
+    <!-- Navbar - Sticky Top -->
+    <nav class="sticky top-0 z-50 bg-dark-bg/95 backdrop-blur-sm border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl sm:text-2xl font-bold gradient-text">
+                        M&C Dev Studio
+                    </a>
+                </div>
+                
+                <!-- Nav Links -->
+                <div class="flex items-center space-x-3 sm:space-x-6">
+                    <a href="#servicios" class="text-gray-300 hover:text-neon-blue transition-colors text-sm sm:text-base">
+                        Servicios
+                    </a>
+                    <a href="#contacto" class="bg-neon-blue text-dark-bg px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-semibold hover:bg-neon-green transition-all min-h-[44px] flex items-center text-sm sm:text-base">
+                        Contactar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-20 overflow-hidden">
+        <!-- Background Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-dark-bg via-dark-card to-dark-bg opacity-50"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,212,255,0.1),transparent_50%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(0,255,136,0.1),transparent_50%)]"></div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto text-center">
+            <!-- Main Heading -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 sm:mb-8">
+                Impulsamos tu Negocio en el
+                <span class="gradient-text block mt-2">Entorno Digital Cubano</span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8 sm:mb-12 px-4">
+                Desarrollo Web a Medida por M&C Dev Studio. Soluciones rápidas, modernas y efectivas para Mipymes.
+            </p>
+            
+            <!-- CTA Button -->
+            <a href="#servicios" class="inline-block bg-gradient-to-r from-neon-blue to-neon-green text-dark-bg px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg hover:scale-105 transition-transform shadow-2xl glow-effect min-h-[44px]">
+                Ver Paquetes
+            </a>
+            
+            <!-- Floating Element -->
+            <div class="mt-12 sm:mt-16 float-animation">
+                <svg class="w-12 h-12 sm:w-16 sm:h-16 mx-auto text-neon-blue opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-dark-card">
+        <div class="max-w-5xl mx-auto">
+            <!-- Section Title -->
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+                    Tus <span class="gradient-text">Aliados Tecnológicos</span>
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+                    Somos 2 desarrolladores apasionados enfocados en transformar ideas en herramientas de venta. 
+                    <span class="text-neon-blue font-semibold">Trato directo, sin intermediarios.</span>
+                </p>
+            </div>
+            
+            <!-- Team Photos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 max-w-2xl mx-auto">
+                <!-- Developer 1 -->
+                <div class="text-center group">
+                    <div class="relative inline-block">
+                        <img src="Manuel.jfif" alt="Manuel Marín" class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mx-auto object-cover border-4 border-neon-blue group-hover:border-neon-green transition-colors">
+                        <div class="absolute -bottom-2 -right-2 w-10 h-10 sm:w-12 sm:h-12 bg-neon-green rounded-full flex items-center justify-center border-4 border-dark-card">
+                            <span class="text-dark-bg font-bold text-xs sm:text-sm">DEV</span>
+                        </div>
+                    </div>
+                    <h3 class="mt-4 sm:mt-6 text-lg sm:text-xl font-bold text-white">Manuel Marín</h3>
+                    <p class="text-sm sm:text-base text-gray-400">Full Stack Developer</p>
+                </div>
+                
+                <!-- Developer 2 -->
+                <div class="text-center group">
+                    <div class="relative inline-block">
+                        <img src="Carlos.jpeg" alt="Carlos Castillo" class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mx-auto object-cover border-4 border-neon-green group-hover:border-neon-blue transition-colors">
+                        <div class="absolute -bottom-2 -right-2 w-10 h-10 sm:w-12 sm:h-12 bg-neon-blue rounded-full flex items-center justify-center border-4 border-dark-card">
+                            <span class="text-dark-bg font-bold text-xs sm:text-sm">DEV</span>
+                        </div>
+                    </div>
+                    <h3 class="mt-4 sm:mt-6 text-lg sm:text-xl font-bold text-white">Carlos Castillo</h3>
+                    <p class="text-sm sm:text-base text-gray-400">Full Stack Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Catalog Section -->
+    <section id="servicios" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Title -->
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+                    Nuestros <span class="gradient-text">Paquetes</span>
+                </h2>
+                <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
+                    Soluciones productizadas y listas para impulsar tu negocio
+                </p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                
+                <!-- Service Card 1: Landing Page -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-blue transition-all hover:transform hover:scale-105 group">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-neon-blue/20 to-neon-blue/5 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-neon-blue/30 transition-all">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-neon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">Presencia Digital</h3>
+                    <p class="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed">
+                        Landing Page profesional + Código QR personalizado. Perfecto para negocios que están empezando y necesitan presencia online rápida.
+                    </p>
+                    <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Diseño responsive optimizado
+                        </li>
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Botón directo a WhatsApp
+                        </li>
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Optimizado para conexiones lentas
+                        </li>
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Código QR imprimible
+                        </li>
+                    </ul>
+                    <div class="text-center pt-4 sm:pt-6 border-t border-dark-border">
+                        <p class="text-xs sm:text-sm text-gray-500 mb-2">Desde</p>
+                        <p class="text-2xl sm:text-3xl font-bold text-neon-blue mb-4 sm:mb-6">Consultar</p>
+                        <a href="#contacto" class="block w-full bg-neon-blue/10 text-neon-blue border border-neon-blue px-4 sm:px-6 py-3 sm:py-3.5 rounded-lg font-semibold hover:bg-neon-blue hover:text-dark-bg transition-all min-h-[44px] text-sm sm:text-base">
+                            Solicitar Info
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2: E-commerce -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-green transition-all hover:transform hover:scale-105 group relative overflow-hidden">
+                    <!-- Popular Badge -->
+                    <div class="absolute top-4 right-4 bg-gradient-to-r from-neon-green to-neon-blue text-dark-bg text-xs font-bold px-3 py-1 rounded-full">
+                        MÁS POPULAR
+                    </div>
+                    
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-neon-green/20 to-neon-green/5 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-neon-green/30 transition-all">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-neon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">E-commerce Mipyme</h3>
+                    <p class="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed">
+                        Tienda online completa + Catálogo de productos + Sistema de pedidos por WhatsApp. Todo lo que necesitas para vender online.
+                    </p>
+                    <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-green mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Carrito de compras funcional
+                        </li>
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-green mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Gestión de categorías y productos
+                        </li>
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-green mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Integración WhatsApp Business
+                        </li>
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-green mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Panel de administración
+                        </li>
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-green mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            SEO optimizado para Cuba
+                        </li>
+                    </ul>
+                    <div class="text-center pt-4 sm:pt-6 border-t border-dark-border">
+                        <p class="text-xs sm:text-sm text-gray-500 mb-2">Desde</p>
+                        <p class="text-2xl sm:text-3xl font-bold text-neon-green mb-4 sm:mb-6">Consultar</p>
+                        <a href="#contacto" class="block w-full bg-gradient-to-r from-neon-green to-neon-blue text-dark-bg px-4 sm:px-6 py-3 sm:py-3.5 rounded-lg font-semibold hover:scale-105 transition-all min-h-[44px] text-sm sm:text-base">
+                            ¡Lo Quiero!
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3: Custom Systems -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-blue transition-all hover:transform hover:scale-105 group md:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500/20 to-purple-500/5 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-purple-500/30 transition-all">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">Sistemas de Gestión</h3>
+                    <p class="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed">
+                        Sistemas de inventario y dashboards personalizados a medida de tu negocio. Control total de tus operaciones.
+                    </p>
+                    <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Control de inventario en tiempo real
+                        </li>
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Reportes y analíticas personalizadas
+                        </li>
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Multi-usuario con roles
+                        </li>
+                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Adaptado 100% a tu flujo de trabajo
+                        </li>
+                    </ul>
+                    <div class="text-center pt-4 sm:pt-6 border-t border-dark-border">
+                        <p class="text-xs sm:text-sm text-gray-500 mb-2">Proyectos desde</p>
+                        <p class="text-2xl sm:text-3xl font-bold text-purple-400 mb-4 sm:mb-6">Consultar</p>
+                        <a href="#contacto" class="block w-full bg-purple-500/10 text-purple-400 border border-purple-400 px-4 sm:px-6 py-3 sm:py-3.5 rounded-lg font-semibold hover:bg-purple-500 hover:text-white transition-all min-h-[44px] text-sm sm:text-base">
+                            Cotizar Proyecto
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section - Proyectos Destacados -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-dark-card">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Title -->
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+                    Proyectos <span class="gradient-text">Destacados</span>: Resultados Reales
+                </h2>
+                <p class="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto">
+                    No solo diseñamos, creamos herramientas que venden. Mira lo que hemos hecho para otros negocios en Cuba.
+                </p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                
+                <!-- Project Card 1: E-commerce -->
+                <div class="bg-dark-bg border border-dark-border rounded-2xl overflow-hidden hover:border-neon-blue transition-all hover:transform hover:-translate-y-2 group">
+                    <!-- Project Image -->
+                    <div class="relative h-48 sm:h-56 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+                        <!-- REEMPLAZAR: Coloca aquí la imagen del proyecto 1 -->
+                        <!-- Usa: <img src="ruta/imagen-proyecto1.jpg" alt="Tienda Moda Habana" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"> -->
+                        <div class="w-full h-full flex items-center justify-center">
+                            <svg class="w-16 h-16 sm:w-20 sm:h-20 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                            </svg>
+                        </div>
+                        <!-- Badge -->
+                        <div class="absolute top-4 right-4 bg-neon-blue/90 text-dark-bg text-xs font-bold px-3 py-1 rounded-full">
+                            E-commerce
+                        </div>
+                    </div>
+                    
+                    <!-- Project Info -->
+                    <div class="p-6">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-3 text-white">Tienda 'Moda Habana'</h3>
+                        <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+                            <span class="font-semibold text-gray-300">Reto:</span> Vender ropa sin local físico. 
+                            <span class="font-semibold text-gray-300">Solución:</span> E-commerce ligero conectado a WhatsApp para cerrar ventas.
+                        </p>
+                        <a href="#contacto" class="inline-flex items-center text-sm font-semibold text-neon-blue hover:text-neon-green transition-colors group-hover:translate-x-1 transform duration-300">
+                            Ver demo
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Corporate Site -->
+                <div class="bg-dark-bg border border-dark-border rounded-2xl overflow-hidden hover:border-neon-green transition-all hover:transform hover:-translate-y-2 group">
+                    <!-- Project Image -->
+                    <div class="relative h-48 sm:h-56 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+                        <!-- REEMPLAZAR: Coloca aquí la imagen del proyecto 2 -->
+                        <!-- Usa: <img src="ruta/imagen-proyecto2.jpg" alt="Consultoría Gestión Total" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"> -->
+                        <div class="w-full h-full flex items-center justify-center">
+                            <svg class="w-16 h-16 sm:w-20 sm:h-20 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <!-- Badge -->
+                        <div class="absolute top-4 right-4 bg-neon-green/90 text-dark-bg text-xs font-bold px-3 py-1 rounded-full">
+                            Corporativo
+                        </div>
+                    </div>
+                    
+                    <!-- Project Info -->
+                    <div class="p-6">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-3 text-white">Consultoría 'Gestión Total'</h3>
+                        <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+                            <span class="font-semibold text-gray-300">Reto:</span> Generar confianza en clientes corporativos. 
+                            <span class="font-semibold text-gray-300">Solución:</span> Sitio web profesional con presentación de equipo y formulario de cotización.
+                        </p>
+                        <a href="#contacto" class="inline-flex items-center text-sm font-semibold text-neon-green hover:text-neon-blue transition-colors group-hover:translate-x-1 transform duration-300">
+                            Ver demo
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: QR Catalog -->
+                <div class="bg-dark-bg border border-dark-border rounded-2xl overflow-hidden hover:border-purple-500 transition-all hover:transform hover:-translate-y-2 group">
+                    <!-- Project Image -->
+                    <div class="relative h-48 sm:h-56 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+                        <!-- REEMPLAZAR: Coloca aquí la imagen del proyecto 3 -->
+                        <!-- Usa: <img src="ruta/imagen-proyecto3.jpg" alt="Menú Digital El Patio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"> -->
+                        <div class="w-full h-full flex items-center justify-center">
+                            <svg class="w-16 h-16 sm:w-20 sm:h-20 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/>
+                            </svg>
+                        </div>
+                        <!-- Badge -->
+                        <div class="absolute top-4 right-4 bg-purple-500/90 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            QR Digital
+                        </div>
+                    </div>
+                    
+                    <!-- Project Info -->
+                    <div class="p-6">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-3 text-white">Menú Digital 'El Patio'</h3>
+                        <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+                            <span class="font-semibold text-gray-300">Reto:</span> Actualizar precios al instante sin reimprimir menús. 
+                            <span class="font-semibold text-gray-300">Solución:</span> Catálogo QR autoadministrable.
+                        </p>
+                        <a href="#contacto" class="inline-flex items-center text-sm font-semibold text-purple-400 hover:text-purple-300 transition-colors group-hover:translate-x-1 transform duration-300">
+                            Ver demo
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-dark-card border-t border-b border-dark-border">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-8 sm:mb-12 text-gray-300">
+                Expertos en Tecnologías Modernas
+            </h3>
+            
+            <!-- Tech Icons Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Django -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-dark-bg rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-neon-green/10 transition-all border border-dark-border group-hover:border-neon-green">
+                        <span class="text-2xl sm:text-3xl font-bold text-neon-green">🦄</span>
+                    </div>
+                    <p class="text-sm sm:text-base font-semibold text-gray-300">Django</p>
+                    <p class="text-xs text-gray-500">Backend</p>
+                </div>
+                
+                <!-- Python -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-dark-bg rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-yellow-500/10 transition-all border border-dark-border group-hover:border-yellow-500">
+                        <span class="text-2xl sm:text-3xl font-bold text-yellow-500">🐍</span>
+                    </div>
+                    <p class="text-sm sm:text-base font-semibold text-gray-300">Python</p>
+                    <p class="text-xs text-gray-500">Backend</p>
+                </div>
+                
+                <!-- Tailwind -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-dark-bg rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-neon-blue/10 transition-all border border-dark-border group-hover:border-neon-blue">
+                        <span class="text-2xl sm:text-3xl font-bold gradient-text">💨</span>
+                    </div>
+                    <p class="text-sm sm:text-base font-semibold text-gray-300">Tailwind</p>
+                    <p class="text-xs text-gray-500">CSS</p>
+                </div>
+                
+                <!-- HTML5 -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-dark-bg rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-orange-500/10 transition-all border border-dark-border group-hover:border-orange-500">
+                        <span class="text-2xl sm:text-3xl font-bold text-orange-500">🌐</span>
+                    </div>
+                    <p class="text-sm sm:text-base font-semibold text-gray-300">HTML5</p>
+                    <p class="text-xs text-gray-500">Frontend</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer Section -->
+    <footer id="contacto" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-dark-bg to-dark-card">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- CTA Heading -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+                ¿Listo para <span class="gradient-text">Empezar?</span>
+            </h2>
+            <p class="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto">
+                Conversemos sobre tu proyecto. Respuesta rápida garantizada.
+            </p>
+            
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/5355513196?text=Hola%20M%26C%20Dev%20Studio,%20me%20interesa%20un%20proyecto%20web" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center bg-[#25D366] text-white px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg hover:bg-[#20BA5A] transition-all shadow-2xl hover:scale-105 mb-8 sm:mb-12 min-h-[44px] space-x-3">
+                <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                <span>Contactar por WhatsApp</span>
+            </a>
+            
+            <!-- Payment Methods -->
+            <div class="bg-dark-card border border-dark-border rounded-xl p-6 sm:p-8 mb-8 sm:mb-12">
+                <p class="text-sm sm:text-base text-gray-400 mb-4">
+                    <span class="font-semibold text-neon-blue">💳 Métodos de Pago Aceptados:</span>
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 text-xs sm:text-sm">
+                    <span class="bg-dark-bg px-4 py-2 rounded-lg text-gray-300 border border-dark-border">USD</span>
+                    <span class="bg-dark-bg px-4 py-2 rounded-lg text-gray-300 border border-dark-border">EURO</span>
+                    <span class="bg-dark-bg px-4 py-2 rounded-lg text-gray-300 border border-dark-border">CUP</span>
+                    <span class="bg-dark-bg px-4 py-2 rounded-lg text-gray-300 border border-dark-border">Efectivo</span>
+                </div>
+            </div>
+            
+            <!-- Additional Contact Info -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-2xl mx-auto">
+                <div class="bg-dark-card border border-dark-border rounded-xl p-4 sm:p-6">
+                    <div class="text-3xl sm:text-4xl mb-2">📧</div>
+                    <p class="text-xs sm:text-sm text-gray-500 mb-1">Email</p>
+                    <a href="mailto:mccdevstudio@gmail.com" class="text-sm sm:text-base text-neon-blue hover:text-neon-green transition-colors">
+                        mccdevstudio@gmail.com
+                    </a>
+                </div>
+                <div class="bg-dark-card border border-dark-border rounded-xl p-4 sm:p-6">
+                    <div class="text-3xl sm:text-4xl mb-2">📱</div>
+                    <p class="text-xs sm:text-sm text-gray-500 mb-1">Teléfono</p>
+                    <a href="tel:+5355513196" class="text-sm sm:text-base text-neon-blue hover:text-neon-green transition-colors">
+                        +53 55513196
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Divider -->
+            <div class="border-t border-dark-border pt-6 sm:pt-8">
+                <!-- Logo -->
+                <div class="mb-4">
+                    <p class="text-xl sm:text-2xl font-bold gradient-text">M&C Dev Studio</p>
+                </div>
+                
+                <!-- Copyright -->
+                <p class="text-xs sm:text-sm text-gray-500">
+                    © 2025 M&C Dev Studio. Todos los derechos reservados.
+                </p>
+                <p class="text-xs text-gray-600 mt-2">
+                    🇨🇺 Desarrollado con ❤️ en Cuba
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal JavaScript for smooth scroll behavior (optional, CSS handles it) -->
+    <script>
+        // Add active state to nav links on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 100;
+                const sectionId = current.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('nav a[href*=' + sectionId + ']').forEach(link => {
+                        link.classList.add('text-neon-blue');
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
