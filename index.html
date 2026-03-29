@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="M&C Dev Studio - Desarrollo Web a Medida para Mipymes en Cuba. Soluciones rápidas, modernas y efectivas.">
-    <meta name="keywords" content="desarrollo web cuba, mipymes cuba, tienda online cuba, landing page cuba">
-    <title>M&C Dev Studio | Desarrollo Web para Mipymes en Cuba</title>
+    <meta name="description" content="M&C Dev Studio - Creamos páginas web para negocios en Cuba que aumentan tus ventas. Diseño moderno, resultados reales.">
+    <meta name="keywords" content="desarrollo web cuba, mipymes cuba, tienda online cuba, landing page cuba, pagina web cuba">
+    <title>M&C Dev Studio | Páginas Web que Venden para Negocios en Cuba</title>
     
     <!-- Google Analytics -->
-    <!-- TODO: Reemplaza 'G-XXXXXXXXXX' con tu ID de Medición de Google Analytics -->
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FT6WXQ5YZR"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-FT6WXQ5YZR');
     </script>
     
@@ -40,545 +37,439 @@
     </script>
     
     <style>
-        /* Custom Animations */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
-        
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
+        .float-animation { animation: float 3s ease-in-out infinite; }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
-        /* Smooth gradient text */
+        .count-up { animation: countUp 0.8s ease-out forwards; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+
         .gradient-text {
             background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-        /* Glow effect */
-        .glow-effect {
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-        }
-        
-        .glow-effect:hover {
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-        }
+
+        .glow-effect { box-shadow: 0 0 25px rgba(0, 212, 255, 0.3); }
+        .glow-effect:hover { box-shadow: 0 0 40px rgba(0, 212, 255, 0.5); }
+
+        .glow-green { box-shadow: 0 0 25px rgba(0, 255, 136, 0.3); }
+        .glow-green:hover { box-shadow: 0 0 40px rgba(0, 255, 136, 0.5); }
+
+        .card-shadow { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+        .card-shadow:hover { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); }
     </style>
 </head>
 
 <body class="bg-dark-bg text-gray-100 font-sans antialiased">
 
-    <!-- Navbar - Sticky Top -->
+    <!-- Navbar -->
     <nav class="sticky top-0 z-50 bg-dark-bg/95 backdrop-blur-sm border-b border-dark-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
-                <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="#" class="text-xl sm:text-2xl font-bold gradient-text">
                         M&C Dev Studio
                     </a>
                 </div>
-                
-                <!-- Nav Links -->
                 <div class="flex items-center space-x-3 sm:space-x-6">
-                    <a href="#servicios" class="text-gray-300 hover:text-neon-blue transition-colors text-sm sm:text-base">
-                        Servicios
+                    <a href="#portafolio" class="text-gray-300 hover:text-neon-blue transition-colors text-sm sm:text-base">
+                        Proyectos
                     </a>
-                    <a href="#contacto" class="bg-neon-blue text-dark-bg px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-semibold hover:bg-neon-green transition-all min-h-[44px] flex items-center text-sm sm:text-base">
-                        Contactar
+                    <a href="#contacto" class="bg-gradient-to-r from-neon-blue to-neon-green text-dark-bg px-5 sm:px-7 py-2.5 sm:py-3 rounded-full font-semibold hover:scale-105 transition-all min-h-[44px] flex items-center text-sm sm:text-base">
+                        Quiero mi web
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-20 overflow-hidden">
-        <!-- Background Gradient -->
+    <!-- 1. HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-28 overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-dark-bg via-dark-card to-dark-bg opacity-50"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,212,255,0.1),transparent_50%)]"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(0,255,136,0.1),transparent_50%)]"></div>
         
         <div class="relative z-10 max-w-5xl mx-auto text-center">
-            <!-- Main Heading -->
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-snug mb-6 sm:mb-8 lg:mb-12 break-normal hyphens-none">
-                <span class="block">Impulsamos tu Negocio</span>
-                <span class="block my-2 sm:my-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-200"> en el</span>
-                <span class="gradient-text inline">Entorno Digital Cubano</span>
-                </span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight mb-6 sm:mb-10">
+                Creamos páginas web para negocios en Cuba que
+                <span class="gradient-text"> aumentan tus ventas</span>
             </h1>
             
-            <!-- Subtitle -->
-            <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8 sm:mb-12 px-4">
-                Desarrollo Web a Medida por M&C Dev Studio.
-                Soluciones rápidas, modernas y efectivas para tu negocio.
+            <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 sm:mb-16 px-4">
+                Diseñamos y desarrollamos sitios modernos que trabajan por ti 24/7
             </p>
             
-            <!-- CTA Button -->
-            <a href="#servicios" class="inline-block bg-gradient-to-r from-neon-blue to-neon-green text-dark-bg px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg hover:scale-105 transition-transform shadow-2xl glow-effect min-h-[44px]">
-                Ver Paquetes
+            <a href="#contacto" class="inline-block bg-gradient-to-r from-neon-blue to-neon-green text-dark-bg px-10 sm:px-14 py-4 sm:py-5 rounded-full font-bold text-lg sm:text-xl hover:scale-105 transition-all shadow-2xl glow-effect min-h-[44px]">
+                Quiero mi web
             </a>
             
-            <!-- Floating Element -->
-            <div class="mt-12 sm:mt-16 float-animation">
-                <svg class="w-12 h-12 sm:w-16 sm:h-16 mx-auto text-neon-blue opacity-50" fill="currentColor" viewBox="0 0 20 20">
+            <div class="mt-16 sm:mt-24 float-animation">
+                <svg class="w-10 h-10 sm:w-14 sm:h-14 mx-auto text-neon-blue opacity-50" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                 </svg>
             </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-dark-card">
+    <!-- 2. SECCIÓN PROBLEMA -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-dark-card">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-10 sm:mb-16">
+                ¿Tu negocio depende solo de <span class="gradient-text">WhatsApp</span>?
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-dark-bg border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-blue/50 transition-all card-shadow">
+                    <div class="text-4xl sm:text-5xl mb-4">😰</div>
+                    <p class="text-sm sm:text-base text-gray-300 font-medium">
+                        Pierdes clientes por no tener presencia online
+                    </p>
+                </div>
+                <div class="bg-dark-bg border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-blue/50 transition-all card-shadow">
+                    <div class="text-4xl sm:text-5xl mb-4">📦</div>
+                    <p class="text-sm sm:text-base text-gray-300 font-medium">
+                        No tienes catálogo visible para tus productos
+                    </p>
+                </div>
+                <div class="bg-dark-bg border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-blue/50 transition-all card-shadow">
+                    <div class="text-4xl sm:text-5xl mb-4">🏃</div>
+                    <p class="text-sm sm:text-base text-gray-300 font-medium">
+                        Tu competencia ya se está digitalizando
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SECCIÓN SOLUCIÓN -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 sm:mb-8">
+                Nosotros <span class="gradient-text">resolvemos</span> eso
+            </h2>
+            <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                Creamos páginas web personalizadas que muestran tus productos, atraen clientes y automatizan tu negocio.
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. PORTAFOLIO -->
+    <section id="portafolio" class="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-dark-card">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14 sm:mb-20">
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 sm:mb-6">
+                    Soluciones <span class="gradient-text">reales</span> para negocios reales
+                </h2>
+                <p class="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
+                    Mira lo que hemos creado para otros negocios como el tuyo
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+                
+                <!-- Proyecto 1: Kitaluro -->
+                <div class="bg-dark-bg border border-dark-border rounded-2xl overflow-hidden hover:border-neon-blue transition-all hover:-translate-y-2 group card-shadow">
+                    <div class="relative h-52 sm:h-64 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden flex items-center justify-center">
+                        <img src="Inicio Kitaluro.png" alt="Kitaluro" class="w-full h-full object-contain">
+                        <div class="absolute top-4 right-4 bg-neon-blue/90 text-dark-bg text-xs font-bold px-3 py-1 rounded-full">
+                            Web Moderna
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8">
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-white">Kitaluro</h3>
+                        <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                            Tienda online Kitaluro, con diseño limpio enfocada en experiencia de usuario y conversión.
+                        </p>
+                        <a href="#contacto" class="inline-flex items-center justify-center bg-gradient-to-r from-neon-blue to-neon-green text-dark-bg px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all text-sm sm:text-base">
+                            Ver sitio
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: MotosLuxe -->
+                <div class="bg-dark-bg border border-dark-border rounded-2xl overflow-hidden hover:border-neon-green transition-all hover:-translate-y-2 group card-shadow">
+                    <div class="relative h-52 sm:h-64 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden flex items-center justify-center">
+                        <img src="Inicio MotosLuxe.png" alt="MotosLuxe" class="w-full h-full object-contain">
+                        <div class="absolute top-4 right-4 bg-neon-green/90 text-dark-bg text-xs font-bold px-3 py-1 rounded-full">
+                            Tienda Online
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8">
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-white">MotosLuxe</h3>
+                        <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                            Tienda online para venta de motos que permite vender 24/7 sin depender de WhatsApp.
+                        </p>
+                        <a href="#contacto" class="inline-flex items-center justify-center border-2 border-neon-blue text-neon-blue px-6 py-3 rounded-full font-semibold hover:bg-neon-blue hover:text-dark-bg transition-all text-sm sm:text-base">
+                            Ver sitio
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: LikeHome -->
+                <div class="bg-dark-bg border border-dark-border rounded-2xl overflow-hidden hover:border-neon-blue transition-all hover:-translate-y-2 group card-shadow md:col-span-2 lg:col-span-1">
+                    <div class="relative h-52 sm:h-64 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden flex items-center justify-center">
+                        <img src="Inicio Like-Home.png" alt="LikeHome" class="w-full h-full object-contain">
+                        <div class="absolute top-4 right-4 bg-neon-blue/90 text-dark-bg text-xs font-bold px-3 py-1 rounded-full">
+                            Gestor de Pedidos
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8">
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-white">LikeHome</h3>
+                        <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                            Sistema de gestión de pedidos que organiza y automatiza las órdenes de tu negocio en un solo lugar.
+                        </p>
+                        <a href="#contacto" class="inline-flex items-center justify-center bg-gradient-to-r from-neon-blue to-neon-green text-dark-bg px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all text-sm sm:text-base">
+                            Ver sitio
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. BENEFICIOS -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-10 sm:mb-16">
+                ¿Qué ganas con <span class="gradient-text">una web</span>?
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-blue/50 transition-all group card-shadow">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-neon-blue/10 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-neon-blue/20 transition-all">
+                        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-neon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Más ventas</h3>
+                    <p class="text-sm text-gray-400">Tus clientes te encuentran y compran sin escribirte</p>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-green/50 transition-all group card-shadow">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-neon-green/10 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-neon-green/20 transition-all">
+                        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-neon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Presencia profesional</h3>
+                    <p class="text-sm text-gray-400">Proyectas confianza y seriedad ante tus clientes</p>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-blue/50 transition-all group card-shadow">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-neon-blue/10 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-neon-blue/20 transition-all">
+                        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-neon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Automatización</h3>
+                    <p class="text-sm text-gray-400">Tu web trabaja mientras tú descansas</p>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-green/50 transition-all group card-shadow">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-neon-green/10 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-neon-green/20 transition-all">
+                        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-neon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Disponible 24/7</h3>
+                    <p class="text-sm text-gray-400">Tus clientes pueden verte y comprarte a cualquier hora</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 8. ANTES vs DESPUÉS -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div class="max-w-5xl mx-auto">
-            <!-- Section Title -->
+            <div class="text-center mb-14 sm:mb-20">
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">
+                    <span class="text-gray-400">Sin web</span> vs <span class="gradient-text">Con web</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+                <!-- Sin Web -->
+                <div class="bg-dark-bg border border-dark-border rounded-2xl p-6 sm:p-8 relative overflow-hidden card-shadow">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gray-600"></div>
+                    <h3 class="text-2xl font-bold text-gray-400 mb-6">Sin web</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-gray-400">
+                            <svg class="w-5 h-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            Dependes 100% de WhatsApp
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <svg class="w-5 h-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            Pierdes clientes que no te conocen
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <svg class="w-5 h-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            No proyectas profesionalismo
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <svg class="w-5 h-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            Solo vendes cuando estás conectado
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Con Web -->
+                <div class="bg-dark-bg border border-neon-green/30 rounded-2xl p-6 sm:p-8 relative overflow-hidden card-shadow">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-blue to-neon-green"></div>
+                    <h3 class="text-2xl font-bold text-neon-green mb-6">Con web</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-gray-200">
+                            <svg class="w-5 h-5 text-neon-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Clientes te encuentran en Google
+                        </li>
+                        <li class="flex items-start text-gray-200">
+                            <svg class="w-5 h-5 text-neon-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Catálogo visible para todos
+                        </li>
+                        <li class="flex items-start text-gray-200">
+                            <svg class="w-5 h-5 text-neon-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Imagen profesional y confiable
+                        </li>
+                        <li class="flex items-start text-gray-200">
+                            <svg class="w-5 h-5 text-neon-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Vendes mientras duermes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contador -->
+            <div class="mt-16 sm:mt-24 text-center">
+                <div class="inline-block bg-dark-bg border border-neon-blue/30 rounded-2xl px-10 sm:px-16 py-8 sm:py-10 glow-effect">
+                    <p class="text-5xl sm:text-6xl md:text-7xl font-extrabold gradient-text mb-2" id="counter">+5</p>
+                    <p class="text-lg sm:text-xl text-gray-300 font-medium">negocios digitalizados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- EQUIPO -->
+    <section class="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-dark-card">
+        <div class="max-w-5xl mx-auto">
             <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 sm:mb-6">
                     Tus <span class="gradient-text">Aliados Tecnológicos</span>
                 </h2>
-                <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-                    Somos 2 desarrolladores apasionados enfocados en transformar ideas en herramientas de venta. 
+                <p class="text-sm sm:text-base text-gray-400 max-w-3xl mx-auto">
+                    Somos 3 amigos apasionados por la tecnología, enfocados en transformar ideas en herramientas de venta. 
                     <span class="text-neon-blue font-semibold">Trato directo, sin intermediarios.</span>
                 </p>
             </div>
             
-            <!-- Team Photos -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 max-w-2xl mx-auto">
-                <!-- Developer 1 -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 max-w-3xl mx-auto">
+                <!-- CEO -->
                 <div class="text-center group">
                     <div class="relative inline-block">
-                        <img src="Manuel.jfif" alt="Manuel Marín" class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mx-auto object-cover border-4 border-neon-blue group-hover:border-neon-green transition-colors">
-                        <div class="absolute -bottom-2 -right-2 w-10 h-10 sm:w-12 sm:h-12 bg-neon-green rounded-full flex items-center justify-center border-4 border-dark-card">
-                            <span class="text-dark-bg font-bold text-xs sm:text-sm">CEO</span>
+                        <img src="Manuel.jfif" alt="Manuel Marín" class="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full mx-auto object-cover border-4 border-neon-blue group-hover:border-neon-green transition-colors">
+                        <div class="absolute -bottom-2 -right-2 w-10 h-10 sm:w-11 sm:h-11 bg-neon-green rounded-full flex items-center justify-center border-4 border-dark-card">
+                            <span class="text-dark-bg font-bold text-xs">CEO</span>
                         </div>
                     </div>
-                    <h3 class="mt-4 sm:mt-6 text-lg sm:text-xl font-bold text-white">Manuel Marín</h3>
-                    <p class="text-sm sm:text-base text-gray-400">Director Ejecutivo</p>
+                    <h3 class="mt-4 sm:mt-5 text-base sm:text-lg font-bold text-white">Manuel Marín</h3>
+                    <p class="text-xs sm:text-sm text-gray-400">Director Ejecutivo</p>
                 </div>
                 
-                <!-- Developer 2 -->
+                <!-- CTO -->
                 <div class="text-center group">
                     <div class="relative inline-block">
-                        <img src="Carlos.jpeg" alt="Carlos Verona" class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mx-auto object-cover border-4 border-neon-green group-hover:border-neon-blue transition-colors">
-                        <div class="absolute -bottom-2 -right-2 w-10 h-10 sm:w-12 sm:h-12 bg-neon-blue rounded-full flex items-center justify-center border-4 border-dark-card">
-                            <span class="text-dark-bg font-bold text-xs sm:text-sm">CTO</span>
+                        <img src="Carlos.jpeg" alt="Carlos Verona" class="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full mx-auto object-cover border-4 border-neon-green group-hover:border-neon-blue transition-colors">
+                        <div class="absolute -bottom-2 -right-2 w-10 h-10 sm:w-11 sm:h-11 bg-neon-blue rounded-full flex items-center justify-center border-4 border-dark-card">
+                            <span class="text-dark-bg font-bold text-xs">CTO</span>
                         </div>
                     </div>
-                    <h3 class="mt-4 sm:mt-6 text-lg sm:text-xl font-bold text-white">Carlos Verona</h3>
-                    <p class="text-sm sm:text-base text-gray-400">Director de tecnología</p>
+                    <h3 class="mt-4 sm:mt-5 text-base sm:text-lg font-bold text-white">Carlos Verona</h3>
+                    <p class="text-xs sm:text-sm text-gray-400">Director de Tecnología</p>
+                </div>
+                
+                <!-- COO -->
+                <div class="text-center group">
+                    <div class="relative inline-block">
+                        <img src="nestor-gerardo.jpeg" alt="Néstor Gerardo" class="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full mx-auto object-cover border-4 border-neon-blue group-hover:border-neon-green transition-colors">
+                        <div class="absolute -bottom-2 -right-2 w-10 h-10 sm:w-11 sm:h-11 bg-neon-green rounded-full flex items-center justify-center border-4 border-dark-card">
+                            <span class="text-dark-bg font-bold text-xs">COO</span>
+                        </div>
+                    </div>
+                    <h3 class="mt-4 sm:mt-5 text-base sm:text-lg font-bold text-white">Néstor Gerardo</h3>
+                    <p class="text-xs sm:text-sm text-gray-400">Director Operativo</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Catalog Section -->
-    <section id="servicios" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <!-- Section Title -->
-            <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-                    Nuestros <span class="gradient-text">Paquetes</span>
-                </h2>
-                <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
-                    Soluciones prácticas y listas para impulsar tu negocio
-                </p>
-            </div>
-            
-            <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                
-                <!-- Service Card 1: Landing Page -->
-                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-blue transition-all hover:transform hover:scale-105 group flex flex-col">
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-neon-blue/20 to-neon-blue/5 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-neon-blue/30 transition-all">
-                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-neon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">Catálogo Digital</h3>
-                    <p class="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed">
-                        Landing Page profesional + Código QR personalizado. Perfecto para negocios que están empezando y necesitan presencia online rápida.
-                    </p>
-                    <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Diseño responsive optimizado
-                        </li>
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Botón directo a WhatsApp
-                        </li>
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Optimizado para conexiones lentas
-                        </li>
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Código QR imprimible
-                        </li>
-                    </ul>
-                    <div class="text-center pt-4 sm:pt-6 border-t border-dark-border mt-auto">
-                        <p class="text-xs sm:text-sm text-gray-500 mb-2">Desde</p>
-                        <p class="text-2xl sm:text-3xl font-bold text-neon-blue mb-4 sm:mb-6">Consultar</p>
-                        <a href="#contacto" class="block w-full bg-neon-blue/10 text-neon-blue border border-neon-blue px-4 sm:px-6 py-3 sm:py-3.5 rounded-lg font-semibold hover:bg-neon-blue hover:text-dark-bg transition-all min-h-[44px] text-sm sm:text-base">
-                            Más Info
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Service Card 2: E-commerce -->
-                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-green transition-all hover:transform hover:scale-105 group relative overflow-hidden flex flex-col">
-                    <!-- Popular Badge -->
-                    <div class="absolute top-4 right-4 bg-gradient-to-r from-neon-green to-neon-blue text-dark-bg text-xs font-bold px-3 py-1 rounded-full">
-                        MÁS POPULAR
-                    </div>
-                    
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-neon-green/20 to-neon-green/5 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-neon-green/30 transition-all">
-                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-neon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">E-commerce Mipyme</h3>
-                    <p class="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed">
-                        Tienda online completa + Catálogo de productos + Sistema de pedidos por WhatsApp. Todo lo que necesitas para vender online.
-                    </p>
-                    <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-green mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Carrito de compras funcional
-                        </li>
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-green mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Gestión de categorías y productos
-                        </li>
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-green mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Integración WhatsApp Business
-                        </li>
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-green mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Panel de administración
-                        </li>
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neon-green mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            SEO optimizado para Cuba
-                        </li>
-                    </ul>
-                    <div class="text-center pt-4 sm:pt-6 border-t border-dark-border mt-auto">
-                        <p class="text-xs sm:text-sm text-gray-500 mb-2">Desde</p>
-                        <p class="text-2xl sm:text-3xl font-bold text-neon-green mb-4 sm:mb-6">Consultar</p>
-                        <a href="#contacto" class="block w-full bg-gradient-to-r from-neon-green to-neon-blue text-dark-bg px-4 sm:px-6 py-3 sm:py-3.5 rounded-lg font-semibold hover:scale-105 transition-all min-h-[44px] text-sm sm:text-base">
-                            Más Info
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Service Card 3: Custom Systems -->
-                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 hover:border-neon-blue transition-all hover:transform hover:scale-105 group md:col-span-2 lg:col-span-1 flex flex-col">
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500/20 to-purple-500/5 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-purple-500/30 transition-all">
-                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">Sistemas de Gestión</h3>
-                    <p class="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed">
-                        Sistemas de inventario y dashboards personalizados a medida de tu negocio. Control total de tus operaciones.
-                    </p>
-                    <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Control de inventario en tiempo real
-                        </li>
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Reportes y analíticas personalizadas
-                        </li>
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Multi-usuario con roles
-                        </li>
-                        <li class="flex items-start text-xs sm:text-sm text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Adaptado 100% a tu flujo de trabajo
-                        </li>
-                    </ul>
-                    <div class="text-center pt-4 sm:pt-6 border-t border-dark-border mt-auto">
-                        <p class="text-xs sm:text-sm text-gray-500 mb-2">Desde</p>
-                        <p class="text-2xl sm:text-3xl font-bold text-purple-400 mb-4 sm:mb-6">Consultar</p>
-                        <a href="#contacto" class="block w-full bg-purple-500/10 text-purple-400 border border-purple-400 px-4 sm:px-6 py-3 sm:py-3.5 rounded-lg font-semibold hover:bg-purple-500 hover:text-white transition-all min-h-[44px] text-sm sm:text-base">
-                            Más Info
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section - Proyectos Destacados -->
-    <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-dark-card">
-        <div class="max-w-7xl mx-auto">
-            <!-- Section Title -->
-            <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-                    Proyectos <span class="gradient-text">Destacados</span>: Resultados Reales
-                </h2>
-                <p class="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto">
-                    No solo diseñamos, creamos herramientas que venden. Mira lo que hemos hecho para otros negocios en Cuba.
-                </p>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                
-                <!-- Project Card 1: Catálogo Servicios Masajista (CATÁLOGO DIGITAL - AZUL) -->
-                <div class="bg-dark-bg border border-dark-border rounded-2xl overflow-hidden hover:border-neon-blue transition-all hover:transform hover:-translate-y-2 group">
-                    <!-- Project Image -->
-                    <div class="relative h-48 sm:h-56 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
-                        <!-- 📸 INSTRUCCIÓN: Reemplaza la línea de abajo con la ruta de la captura del Catálogo Masajista -->
-                        <img src="Nestor.png" alt="Catálogo Servicios de Masajes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"> -->
-                        <div class="w-full h-full flex items-center justify-center">
-                            <svg class="w-16 h-16 sm:w-20 sm:h-20 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                            </svg>
-                        </div>
-                        <!-- Badge -->
-                        <div class="absolute top-4 right-4 bg-neon-blue/90 text-dark-bg text-xs font-bold px-3 py-1 rounded-full">
-                            Catálogo Digital
-                        </div>
-                    </div>
-                    
-                    <!-- Project Info -->
-                    <div class="p-6">
-                        <h3 class="text-xl sm:text-2xl font-bold mb-3 text-white">Catálogo de Servicios 'Masajista'</h3>
-                        <p class="text-sm text-gray-400 mb-4 leading-relaxed">
-                            <span class="font-semibold text-gray-300">Reto:</span> Mostrar tipos de masajes y agendar citas fácilmente. 
-                            <span class="font-semibold text-gray-300">Solución:</span> Catálogo visual con información de servicios, enlaces a información y redes sociales, y reservas directas por WhatsApp.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                            <a href="https://n3storg-touch.github.io/Catalogo/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-sm font-semibold text-neon-blue hover:text-neon-green transition-colors group-hover:translate-x-1 transform duration-300">
-                                Visitar sitio
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                </svg>
-                            </a>
-                            <a href="https://wa.me/5355513196?text=Hola%2C%20me%20interesa%20un%20cat%C3%A1logo%20digital%20como%20el%20del%20Masajista" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-[#25D366] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#20BA5A] transition-all">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                                </svg>
-                                WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2: Web Empresarial Coimpre -->
-                <div class="bg-dark-bg border border-dark-border rounded-2xl overflow-hidden hover:border-neon-green transition-all hover:transform hover:-translate-y-2 group">
-                    <!-- Project Image -->
-                    <div class="relative h-48 sm:h-56 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
-                        <!-- 📸 INSTRUCCIÓN: Reemplaza la línea de abajo con la ruta de la captura del sitio Coimpre -->
-                        <img src="Inicio Coimpre.png" alt="Web Empresarial Coimpre S.r.l" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"> -->
-                        <div class="w-full h-full flex items-center justify-center">
-                            <svg class="w-16 h-16 sm:w-20 sm:h-20 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <!-- Badge -->
-                        <div class="absolute top-4 right-4 bg-neon-green/90 text-dark-bg text-xs font-bold px-3 py-1 rounded-full">
-                            Sitio Corporativo
-                        </div>
-                    </div>
-                    
-                    <!-- Project Info -->
-                    <div class="p-6">
-                        <h3 class="text-xl sm:text-2xl font-bold mb-3 text-white">Web Empresarial 'Coimpre S.r.l'</h3>
-                        <p class="text-sm text-gray-400 mb-4 leading-relaxed">
-                            <span class="font-semibold text-gray-300">Reto:</span> Proyectar profesionalismo y credibilidad nacional, mostrar catálogos de productos. 
-                            <span class="font-semibold text-gray-300">Solución:</span> Sitio corporativo moderno con catálogo de productos y galería. Contacto rápido y sistema multilingüe.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                            <a href="https://coimpre.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-sm font-semibold text-neon-blue hover:text-neon-green transition-colors group-hover:translate-x-1 transform duration-300">
-                                Visitar sitio
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                </svg>
-                            </a>
-                            <a href="https://wa.me/5355513196?text=Hola%2C%20me%20interesa%20un%20sitio%20corporativo%20como%20el%20de%20Coimpre" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-[#25D366] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#20BA5A] transition-all">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                                </svg>
-                                WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 3: Gestor de Pedidos Like-Home (SISTEMAS DE GESTIÓN - PÚRPURA) -->
-                <div class="bg-dark-bg border border-dark-border rounded-2xl overflow-hidden hover:border-purple-500 transition-all hover:transform hover:-translate-y-2 group">
-                    <!-- Project Image -->
-                    <div class="relative h-48 sm:h-56 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
-                        <!-- 📸 INSTRUCCIÓN: Reemplaza la línea de abajo con la ruta de la captura del Gestor Like-Home -->
-                        <img src="Inicio Like-Home.png" alt="Gestor de Pedidos Like-Home" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"> -->
-                        <div class="w-full h-full flex items-center justify-center">
-                            <svg class="w-16 h-16 sm:w-20 sm:h-20 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
-                            </svg>
-                        </div>
-                        <!-- Badge -->
-                        <div class="absolute top-4 right-4 bg-purple-500/90 text-white text-xs font-bold px-3 py-1 rounded-full">
-                            Sistemas de Gestión
-                        </div>
-                    </div>
-                    
-                    <!-- Project Info -->
-                    <div class="p-6">
-                        <h3 class="text-xl sm:text-2xl font-bold mb-3 text-white">Gestor de Pedidos 'Like-Home'</h3>
-                        <p class="text-sm text-gray-400 mb-4 leading-relaxed">
-                            <span class="font-semibold text-gray-300">Reto:</span> Controlar pedidos, inventario y comisiones en tiempo real. 
-                            <span class="font-semibold text-gray-300">Solución:</span> Sistema personalizado de control de inventario, registro de pedidos, cancelación automática de pedidos y estadísticas de venta y comisiones.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                            <a href="https://ricardo397.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-sm font-semibold text-neon-blue hover:text-neon-green transition-colors group-hover:translate-x-1 transform duration-300">
-                                Visitar sitio
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                </svg>
-                            </a>
-                            <a href="https://wa.me/5355513196?text=Hola%2C%20me%20interesa%20un%20proyecto%20similar%20al%20Gestor%20Like-Home" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-[#25D366] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#20BA5A] transition-all">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                                </svg>
-                                WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Stack Section -->
-    <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-dark-card border-t border-b border-dark-border">
-        <div class="max-w-6xl mx-auto">
-            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-8 sm:mb-12 text-gray-300">
-                Expertos en Tecnologías Modernas
-            </h3>
-            
-            <!-- Tech Icons Grid -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
-                <!-- Django -->
-                <div class="flex flex-col items-center group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-dark-bg rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-neon-green/10 transition-all border border-dark-border group-hover:border-neon-green">
-                        <span class="text-2xl sm:text-3xl font-bold text-neon-green">🦄</span>
-                    </div>
-                    <p class="text-sm sm:text-base font-semibold text-gray-300">Django</p>
-                    <p class="text-xs text-gray-500">Backend</p>
-                </div>
-                
-                <!-- Python -->
-                <div class="flex flex-col items-center group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-dark-bg rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-yellow-500/10 transition-all border border-dark-border group-hover:border-yellow-500">
-                        <span class="text-2xl sm:text-3xl font-bold text-yellow-500">🐍</span>
-                    </div>
-                    <p class="text-sm sm:text-base font-semibold text-gray-300">Python</p>
-                    <p class="text-xs text-gray-500">Backend</p>
-                </div>
-                
-                <!-- Tailwind -->
-                <div class="flex flex-col items-center group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-dark-bg rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-neon-blue/10 transition-all border border-dark-border group-hover:border-neon-blue">
-                        <span class="text-2xl sm:text-3xl font-bold gradient-text">💨</span>
-                    </div>
-                    <p class="text-sm sm:text-base font-semibold text-gray-300">Tailwind</p>
-                    <p class="text-xs text-gray-500">CSS</p>
-                </div>
-                
-                <!-- HTML5 -->
-                <div class="flex flex-col items-center group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-dark-bg rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-orange-500/10 transition-all border border-dark-border group-hover:border-orange-500">
-                        <span class="text-2xl sm:text-3xl font-bold text-orange-500">🌐</span>
-                    </div>
-                    <p class="text-sm sm:text-base font-semibold text-gray-300">HTML5</p>
-                    <p class="text-xs text-gray-500">Frontend</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact/Footer Section -->
-    <footer id="contacto" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-dark-bg to-dark-card">
+    <!-- 6. CTA FINAL -->
+    <section id="contacto" class="py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto text-center">
-            <!-- CTA Heading -->
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-                ¿Listo para <span class="gradient-text">Empezar?</span>
+            <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 sm:mb-8">
+                Empieza a vender más <span class="gradient-text">hoy</span>
             </h2>
-            <p class="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto">
-                Conversemos sobre tu proyecto. Respuesta rápida garantizada.
+            <p class="text-sm sm:text-base md:text-lg text-gray-400 mb-12 sm:mb-16 max-w-2xl mx-auto">
+                Conversemos sobre tu negocio. Respuesta rápida garantizada.
             </p>
-            
-            <!-- WhatsApp Button -->
-            <a href="https://wa.me/5355513196?text=Hola%20M%26C%20Dev%20Studio,%20me%20interesa%20un%20proyecto%20web" 
+
+            <a href="https://wa.me/5355513196?text=Hola%20M%26C%20Dev%20Studio,%20quiero%20solicitar%20mi%20p%C3%A1gina%20web" 
                target="_blank" 
                rel="noopener noreferrer"
-               class="inline-flex items-center justify-center bg-[#25D366] text-white px-8 sm:px-12 py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg hover:bg-[#20BA5A] transition-all shadow-2xl hover:scale-105 mb-8 sm:mb-12 min-h-[44px] space-x-3">
-                <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
-                <span>Contactar por WhatsApp</span>
+               class="inline-flex items-center justify-center bg-gradient-to-r from-neon-blue to-neon-green text-dark-bg px-10 sm:px-14 py-4 sm:py-5 rounded-full font-bold text-lg sm:text-xl hover:scale-105 transition-all shadow-2xl glow-effect min-h-[44px] space-x-3 mb-14 sm:mb-18">
+                <span>Solicitar mi página web</span>
             </a>
             
-            <!-- Payment Methods -->
-            <div class="bg-dark-card border border-dark-border rounded-xl p-6 sm:p-8 mb-8 sm:mb-12">
-                <p class="text-sm sm:text-base text-gray-400 mb-4">
-                    <span class="font-semibold text-neon-blue">💳 Métodos de Pago:</span>
-                </p>
-                <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 text-xs sm:text-sm">
-                    <span class="bg-dark-bg px-4 py-2 rounded-lg text-gray-300 border border-dark-border">USD</span>
-                    <span class="bg-dark-bg px-4 py-2 rounded-lg text-gray-300 border border-dark-border">EURO</span>
-                    <span class="bg-dark-bg px-4 py-2 rounded-lg text-gray-300 border border-dark-border">CUP</span>
-                </div>
-            </div>
-            
-            <!-- Additional Contact Info -->
+            <!-- Contact Info -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-2xl mx-auto">
-                <div class="bg-dark-card border border-dark-border rounded-xl p-4 sm:p-6">
-                    <div class="text-3xl sm:text-4xl mb-2">📧</div>
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-5 sm:p-6">
+                    <div class="text-3xl mb-2">📧</div>
                     <p class="text-xs sm:text-sm text-gray-500 mb-1">Email</p>
                     <a href="mailto:mccdevstudio@gmail.com" class="text-sm sm:text-base text-neon-blue hover:text-neon-green transition-colors">
                         mccdevstudio@gmail.com
                     </a>
                 </div>
-                <div class="bg-dark-card border border-dark-border rounded-xl p-4 sm:p-6">
-                    <div class="text-3xl sm:text-4xl mb-2">📱</div>
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-5 sm:p-6">
+                    <div class="text-3xl mb-2">📱</div>
                     <p class="text-xs sm:text-sm text-gray-500 mb-1">Teléfono</p>
                     <a href="tel:+5355513196" class="text-sm sm:text-base text-neon-blue hover:text-neon-green transition-colors">
                         +53 55513196
@@ -586,43 +477,61 @@
                 </div>
             </div>
             
-            <!-- Divider -->
+            <!-- Payment Methods -->
+            <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 mb-10 sm:mb-14">
+                <p class="text-sm sm:text-base text-gray-400 mb-4">
+                    <span class="font-semibold text-neon-blue">Métodos de Pago:</span>
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 text-xs sm:text-sm">
+                    <span class="bg-dark-bg px-4 py-2 rounded-lg text-gray-300 border border-dark-border">USD</span>
+                    <span class="bg-dark-bg px-4 py-2 rounded-lg text-gray-300 border border-dark-border">EURO</span>
+                    <span class="bg-dark-bg px-4 py-2 rounded-lg text-gray-300 border border-dark-border">CUP</span>
+                </div>
+            </div>
+
+            <!-- Footer -->
             <div class="border-t border-dark-border pt-6 sm:pt-8">
-                <!-- Logo -->
                 <div class="mb-4 flex justify-center">
                     <img src="M&C Dev.png" alt="M&C Dev Studio - Desarrollo Web Cuba" class="h-10 sm:h-16 w-auto object-contain">
                 </div>
-                
-                <!-- Copyright -->
                 <p class="text-xs sm:text-sm text-gray-500">
-                    © 2025 M&C Dev Studio. Todos los derechos reservados.
+                    &copy; 2025 M&C Dev Studio. Todos los derechos reservados.
                 </p>
                 <p class="text-xs text-gray-600 mt-2">
-                    🇨🇺 Desarrollado con ❤️ en Cuba
+                    Desarrollado en Cuba
                 </p>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Minimal JavaScript for smooth scroll behavior (optional, CSS handles it) -->
     <script>
-        // Add active state to nav links on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollY = window.pageYOffset;
+        // Counter animation
+        function animateCounter(el, target) {
+            let current = 0;
+            const increment = Math.ceil(target / 40);
+            const timer = setInterval(function() {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                el.textContent = '+' + current;
+            }, 50);
+        }
 
-            sections.forEach(current => {
-                const sectionHeight = current.offsetHeight;
-                const sectionTop = current.offsetTop - 100;
-                const sectionId = current.getAttribute('id');
-                
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    document.querySelectorAll('nav a[href*=' + sectionId + ']').forEach(link => {
-                        link.classList.add('text-neon-blue');
-                    });
+        const counterEl = document.getElementById('counter');
+        let counterAnimated = false;
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting && !counterAnimated) {
+                    counterAnimated = true;
+                    animateCounter(counterEl, 10);
                 }
             });
-        });
+        }, { threshold: 0.5 });
+
+        observer.observe(counterEl);
     </script>
 
 </body>
